@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Html Form</title>
+</head>
+
+<body>
+
+    <h1>Login Form</h1>
+    <form></form>
+    <fieldset>
+        <legend>Basic Infromation</legend>
+        <label for="username">Username : </label>
+        <input type="text" id="username" name="usernamefield" placeholder="Enter your email id">
+        <br />
+        <br />
+        <label for="password">Password : </label>
+        <input type="password" id="password" name="passwordfield" placeholder="Enter your password">
+        <br />
+        <br />
+        <label for="choosedate">DOB : </label>
+        <input type="date" id="choosedate" name="datefield">
+        <br />
+        <br />
+        <label for="selectprogramminglang">Select Programming Langauges :</label>
+        <select name="programmingLangauges" id="selectprogramminglang" multiple="multiple">
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="js">JavaScript</option>
+            <option value="c++">C++</option>
+            <option value="c">C</option>
+        </select>
+        <br />
+        <br />
+        <label for="selectstate">Select State :</label>
+        <select name="state" id="selectstate">
+            <option value="ka">Karnataka</option>
+            <option value="ap">Andhra Pradesh</option>
+            <option value="tn">Tamil Nadu</option>
+            <option value="dl">Delhi</option>
+            <option value="mh">Maharashtra</option>
+        </select>
+        <br />
+        <br />
+
+        <label>Choose your Gender</label>
+        <br />
+        <form>
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="male">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="male">Prefer not to say</label>
+        </form>
+        <br />
+        <br />
+
+        <label for="languages">Languages Known (English, Marathi, Hindi)</label>
+        <br />
+        <input type="checkbox" name="english" id="english" value="English">
+        <label for="english">English</label>
+        <input type="checkbox" name="marathi" id="marathi" value="Marathi">
+        <label for="marathi">Marathi</label>
+        <input type="checkbox" name="hindi" id="hindi" value="Hindi">
+        <label for="hindi">Hindi</label>
+        <br />
+        <br />
+
+        <label for="aboutyou">About You :</label>
+        <textarea name="aboutyou" id="aboutyou" cols="30" rows="10" placeholder="Describe yourself here..."></textarea>
+        <br />
+        <br />
+        <label for="choosefile">Choose File : </label>
+        <input type="file" name="choosefile" id="choosefile" placeholder="choose">
+        <br/>
+        <br/>
+        <input type="submit" value="Login">
+        <button>Click Here</button>
+        <input type="image" name="button"
+            src="data:image/png;base64,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"
+            alt="Click Me"
+            width="50" height="50"
+            >
+    </fieldset>
+    </form>
+</body>
+
+</html>
