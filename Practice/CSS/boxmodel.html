@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model in CSS</title>
+
+    <style>
+
+        *{
+            /* Universal Selector */
+            padding: 0px;
+            margin: 0px;
+        }
+        .mainheading {
+            text-decoration: underline;
+            font-size: 35px;
+            font-weight: 700;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+            /* color: rgb(151, 248, 252); */
+            /* background-color: rgb(52, 158, 10); */
+            border: solid, red, 2px;
+            /* border: 2px;
+            border-color: red;
+            border-style: solid;
+            border-radius: 5px; */
+
+            /* padding: 10px; */
+            padding: 0px 0px 0px 10px;
+            /* padding-left: 10px;
+            padding-right: 2px;
+            padding-top: 9px;
+            padding-bottom: 9px; */
+
+
+            /* border-bottom-right-radius: 5px; */
+            /* border-top-left-radius: 5px; */
+            border-top: solid 5px black;
+            border-bottom: solid 5px green;
+            border-left: solid 5px yellow;
+            border-right: solid 5px blue;
+            border-radius: 15px 0px 15px 0px;
+            width: 300px;
+            /* height: 50px; */
+            margin: 20px;
+
+        }
+
+        #para1 {
+            background-color: brown;
+            color: rgb(142, 245, 138);
+            font-style: normal;
+            width: 300px;
+            border: solid burlywood 5px;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .para2 {
+            background-color: rgb(69, 123, 185);
+            color: rgb(236, 221, 136);
+            font-style: normal;
+            border: solid burlywood 5px;
+            border-radius: 4px;
+            width: 300px;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        #para3 {
+            background-color: rgb(90, 69, 185);
+            color: rgb(136, 236, 186);
+            font-style: normal;
+            border: solid burlywood 5px;
+            border-radius: 4px;
+            width: 300px;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        span {
+            background-color: rgb(90, 69, 185);
+            color: rgb(136, 236, 186);
+            font-style: normal;
+            border: solid burlywood 5px;
+            border-radius: 4px;
+            width: 300px;
+            height: 50px;
+            margin: 20px;
+            /* display: inline-block; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="mainheading">Box Model in CSS</h1>
+    <span>Welcome to my world</span>
+
+    <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique iusto veritatis laborum aliquid.
+        Qui voluptas ea corporis sapiente consequuntur, enim veritatis quidem aliquam itaque atque quas natus
+        consequatur! Sint amet rem ducimus laudantium error quas incidunt hic autem fuga debitis.</p>
+
+    <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque velit voluptatem accusantium alias
+        impedit exercitationem et dolor iste vel expedita? Voluptatum vel vero explicabo pariatur maxime omnis tenetur
+        voluptatem delectus molestias reiciendis quod nulla ex perferendis, rem officia! Labore rem enim provident
+        aperiam hic recusandae totam suscipit debitis praesentium aspernatur.</p>
+
+    <p id="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ullam expedita dolore perferendis
+        animi iusto fugit quis tempora nostrum provident blanditiis, ipsa harum? Facere corporis autem, sint magnam
+        maxime rem deserunt cum! Numquam ipsum fuga ducimus unde magnam harum cumque reiciendis reprehenderit voluptatum
+        culpa. Tempore, repudiandae aspernatur? Laudantium, consequatur inventore!</p>
+
+</body>
+
+</html>

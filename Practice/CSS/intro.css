@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+    font-size: smaller;
+}
+footer{
+    color: rgb(87, 87, 5);
+}
+
+/* Types of Selector
+1. Element(tag name)
+2. Id
+3. Class
+4. Grouping
+*/
+
+/* 1. Element or Tag Name */
+p{
+    background-color: tomato !important;
+    color: rgb(27, 2, 53) !important;
+}
+
+/* 2. Id (#) */
+#para1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 3. Class Name(.) */
+
+.para{
+    font-weight: bold;
+}
+
+/* 4. Grouping */
+.para, #para2, footer{
+    padding: 10px;
+}
