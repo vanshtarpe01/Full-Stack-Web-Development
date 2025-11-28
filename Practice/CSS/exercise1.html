@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f7e9;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 28px;
+        }
+
+        .label {
+            margin-left: 10px;
+            color: rgb(3, 66, 3);
+            font-size: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #username,
+        #password {
+            margin-top: 8px;
+            margin-bottom: 12px;
+            margin-left: 12px;
+            display: block;
+            width: 300px;
+            height: 32px;
+            border: 1px solid rgba(39, 122, 0, 0.418);
+            border-radius: 10px;
+            padding-left: 15px;
+            color: rgb(1, 58, 1);
+            font-size: 15px;
+            font-family: 'Gill Sans', 'Segoe UI', Calibri, sans-serif;
+        }
+
+        #btnsubmit {
+            margin: 16px 12px;
+            width: 320px;
+            height: 36px;
+            border: 1px solid rgb(10, 27, 2);
+            background-color: darkgreen;
+            border-radius: 10px;
+            color: white;
+            font-size: 17px;
+            font-family: 'Gill Sans', 'Segoe UI', Calibri, sans-serif;
+            cursor: pointer;
+        }
+
+        .container {
+            border: 1px solid green;
+            padding: 16px;
+            border-radius: 16px;
+            width: 345px;
+            background-color: rgb(239, 253, 219);
+        }
+
+        .loginimg {
+            height: 100px;
+            width: 100px;
+            margin-left: 120px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="password.png" alt="LoginPng" class="loginimg">
+        <h1>Login Here</h1>
+
+        <label for="username" class="label">Username :</label>
+        <input type="text" id="username" placeholder="Enter Username">
+
+        <label for="password" class="label">Password :</label>
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button id="btnsubmit" onclick="login()">Submit</button>
+    </div>
+
+</body>
+
+<script>
+    function login(){
+        alert("Login Done...!")
+    }
+</script>
+
+</html>
