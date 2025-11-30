@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise No 2 : Design a Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: gainsboro;
+            justify-content: center;
+            /* align-items: center; */
+            margin: 20px;
+        }
+
+        .container {
+            width: 240px;
+            height: 390px;
+            background-color: white;
+            /* border: 1px solid red; */
+            border-radius: 20px;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            box-shadow: inset 0.5px 0.5px 8px 4px rgba(0, 4, 255, 0.301);
+        }
+
+        #img3 {
+            width: 210px;
+            height: 140px;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .ulist {
+            list-style: none;
+            font-family: cursive;
+            font-weight: 500;
+            color: gray;
+            font-size: 12px;
+            display: flex;
+            margin-left: -90px;
+            /* align-items: self-start; */
+        }
+
+        .list {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            /* position: relative;
+            left: 0px; */
+        }
+        #heading{
+            padding: 2px 12px;
+            font-size: 24px;
+            font-family: cursive;
+            color: rgb(49, 49, 49);
+        }
+        #para{
+            padding: 4px 12px;    
+            font-family: cursive;
+            font-size: 14px;
+            color: rgb(100, 100, 100);
+        }
+        #btnrm{
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 16px;
+            border-color:  rgb(125, 169, 211);
+            color: rgb(4, 51, 95);
+            box-shadow:inset 2px 2px 12px 3px;
+            background-color:  rgb(153, 205, 253);
+        }
+        
+        #btnrm:hover {
+            opacity: 0.8;
+            border-radius: 18px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box" id="box1">
+            <img src="img3.jpg" alt="img3" id="img3">
+        </div>
+        <div class="box" id="box2">
+            <ul class="ulist">
+                <li class="list">Lake</li>
+                <li class="list">Nature</li>
+            </ul>
+        </div>
+        <div class="box" id="box3">
+            <h1 id="heading">Nature Vibes</h1>
+
+            <p id="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea animi magnam reiciendis, pariatur eum
+                corporis aut molestiae.</p>
+        </div>
+        <div class="box" id="box4">
+            <button id="btnrm">Read More</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

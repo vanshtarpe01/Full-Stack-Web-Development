@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows In Css</title>
+    <style>
+        /* Root is used for making custom variables that can acccess globally */
+        :root{
+            /* Syntax for custom variables */
+            /* Inside the root tag/element the variable that are global */
+            --primary-color: brown; 
+            --purple-color: purple;
+            --custom-width: 300px;
+        }
+        .box{
+            /* local variable used in only this block */
+            --align-center: center;
+            width: var(--custom-width);
+            height: 300px;
+            background-color: whitesmoke;
+            color: blueviolet;
+            text-align: var(--align-center);
+            align-content: var(--align-center);
+            /* Inset | X-axis | Y-axis | blur | spread color */
+            box-shadow: inset 2px 5px 12px 5px var(--purple-color);
+            /* X-axis | Y-axis | blur | color */
+            /* text-shadow: 1px 1px  4px blue; */
+             /* color | X-axis | Y-axis | blur */
+            text-shadow: blue 1px 1px  4px;
+            font-size: 28px;
+        }
+        h1{
+            text-shadow: 1px 1px 1px yellow, 3px 3px 2px green, 5px 5px 5px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">I am Box</div>
+    <h1>I am Heading</h1>
+</body>
+</html>

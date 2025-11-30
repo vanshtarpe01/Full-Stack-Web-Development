@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desiging a Simple Layout</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .ul-navlist {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            background-color: rgb(170, 120, 216);
+            box-shadow: 2px 2px 6px 4px blueviolet;
+        }
+
+        .listitem {
+            list-style: none;
+            margin-right: 25px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding: 10px;
+            text-decoration: underline;
+        }
+
+        .container {
+            background-color: green;
+            display: flex;
+            justify-content: space-around;
+            height: 600px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 10px;
+            background-color: chartreuse;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: center;
+            height: 800px;
+        }
+
+        .box1 {
+            width: 500px;
+            height: 120px;
+            border: 1px solid black;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-shadow: 2px 3px 4px goldenrod;
+            box-shadow: inset 2px 2px 16px 4px blue, inset -2px -2px 16px 4px blueviolet, 2px 2px 4px 1px;
+            margin-top: 12px;
+        }
+
+        #img2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 180px;
+            position: fixed;
+            right: 50px;
+            top: 80px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    <nav class="nav">
+        <ul class="ul-navlist">
+            <li class="listitem">Home</li>
+            <li class="listitem">Search</li>
+            <li class="listitem">Contact Us</li>
+            <li class="listitem">About</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+    </div>
+    </div>
+    <div class="container1">
+        <div class="box1">
+            Welcome to Full Stack Web Development..
+        </div>
+        <img src="img2.jpg" id="img2" alt="img2">
+    </div>
+
+    <footer>
+        <p>&copy; Copyright 2025 Product Catlog. All Reserved Rights</p>
+    </footer>
+
+
+</body>
+
+</html>
