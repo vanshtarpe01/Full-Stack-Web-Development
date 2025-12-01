@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions in Css</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            border: 2px solid blueviolet;
+            width: 80vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 30%;
+            height: 20%;
+            border: 2px solid red;
+            border-radius: 6px;
+            background-color: chartreuse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Transitions Porperty */
+            /*names of the CSS properties to which transitions should be applied. */
+            transition-property: all;
+            /* Defines how long to wait between the time a property is changed and the transition actually begins */
+            transition-delay: 1s ;
+            /* duration over which transitions should occur*/
+            transition-duration: 8s;
+            /* Specifies a function to define how intermediate values for properties are computed.*/
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            /* transition: cubic-bezier(0.215, 0.610, 0.355, 1); */
+        }
+
+        .box:hover {
+            /* width: 50%;
+            height: 50%; */
+            /* transform: translateX(50%); */
+            /* transform: rotate(360deg); */
+            /* transform: scale(2, 2); */
+            transform: skew(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">I am Box</div>
+    </div>
+
+</body>
+
+</html>

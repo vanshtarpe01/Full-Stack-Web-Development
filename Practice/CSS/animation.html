@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations in Css</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 2px solid black;
+            width: 100vw;
+            height: 90vh;
+            position: relative;
+        }
+
+        .box {
+            width: 25%;
+            height: 10%;
+            border: 5px solid blueviolet;
+            background-color: blue;
+        }
+
+        #box1 {
+            margin-top: 2%;
+            position: absolute;
+            left: 0;
+            /* Name of the animation */
+            animation-name: boxani1;
+            /* Timing Function(ease, ease-in,ease-out,etc) */
+            animation-timing-function: ease-in;
+            /* Delay for starting the animation */
+            animation-delay: 0s;
+            /* Duration of an animation */
+            animation-duration: 5s;
+            /* Iteration Count of the animation */
+            animation-iteration-count: infinite;
+            /* Play state of the animation (Running or Paused) */
+            animation-play-state: running;
+            /* Animation alternate  */
+            animation-direction: alternate;
+        }
+
+        @keyframes boxani1 {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: 0;
+                left: 75%;
+            }
+
+        }
+
+        #box2 {
+            margin-bottom: 2%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation-name: boxani2;
+            animation-timing-function: ease-in;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes boxani2 {
+            from {
+                bottom: 0;
+                right: 0;
+            }
+
+            to {
+                bottom: 0;
+                right: 75%;
+            }
+
+        }
+
+        .box2 {
+            width: 4%;
+            height: 10%;
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            background-color: blue;
+            border: 2px solid orange;
+            border-radius: 45px;
+
+            animation-duration: 5s;
+            animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation-name: ballani;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-direction: alternate;
+        }
+
+        @keyframes ballani {
+            0% {
+                top: 45%;
+                left: 20%;
+            }
+
+            30% {
+                top: 64%;
+                left: 90%;
+            }
+
+            65% {
+                top: 90%;
+                left: 10%;
+            }
+
+            100% {
+                top: 24%;
+                left: 100%;
+            }
+        }
+
+        p {
+            margin: 20px;
+            font-size: 20px;
+            color: blueviolet;
+            text-shadow: 2px 2px 2px;
+            animation-duration: 3s;
+            animation-name: slide-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes slide-in {
+            from {
+                translate: 150vw 0;
+                scale: 200% 1;
+            }
+
+            to {
+                translate: 0 0;
+                scale: 100% 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box2"></div>
+    </div>
+
+    <p>
+        Animations Is Here(Gajab)....
+    </p>
+</body>
+
+</html>

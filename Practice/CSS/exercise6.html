@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6 Based on Animations</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            height: 80vh;
+            width: 80vw;
+            background-color: blue;
+            position: relative;
+        }
+
+        .box {
+            background-color: brown;
+            border-radius: 70px;
+            height: 13%;
+            width: 6%;
+            position: relative;
+            left: 0;
+            top: 87%;
+
+            /* Animation */
+            animation-name: bounce-animation;
+            animation-timing-function: linear;
+            animation-duration: 12s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-delay: 0s;
+        }
+
+        @keyframes bounce-animation {
+            0% {
+                left: 0;
+                top: 87%;
+            }
+            20%{
+                left: 20%;
+                top: 10%;
+            }
+            40%{
+                left: 45%;
+                top: 87%;
+            }
+            60%{
+                left: 70%;
+                top:20%;
+            }
+            100%{
+                left:85%;
+                top:87%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

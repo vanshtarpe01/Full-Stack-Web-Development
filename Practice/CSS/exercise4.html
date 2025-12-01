@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone a nav bar of a Website </title>
+    <style>
+        .navcontainer {
+            width: 98vw;
+            height: 16vh;
+            border: 0.2px solid rgb(177, 177, 177);
+            border-radius: 5px;
+            background-color: rgb(240, 240, 240);
+            display: flex;
+        }
+
+        #imglogo {
+            width: 16%;
+            margin-left: 10px;
+        }
+
+        .navlist {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .downarrow {
+            width: 14px;
+            height: 12px;
+            margin-top: 10px;
+        }
+
+        .paratitle {
+            font-size: 14px;
+            margin-top: 8px;
+            margin-left: 22px;
+            margin-right: 4px;
+        }
+
+        #btndownload {
+            margin-left: 25px;
+            width: 100px;
+            height: 30px;
+            background-color: gold;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #langicon {
+            width: 22px;
+            height: 20px;
+            margin-top: 6px;
+            margin-left: 15px;
+        }
+
+        #searchicon {
+            height: 20px;
+            height: 20px;
+            margin-top: 5px;
+            margin-left: 10px;
+            position: absolute;
+            right: 35px;
+        }
+
+        #paralang {
+            font-size: 14px;
+            margin-top: 8px;
+            margin-left: 6px;
+        }
+
+        .headingcontainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        #oswin {
+            height: 36px;
+            width: 36px;
+            margin-left: 16px;
+        }
+
+        #heading {
+            font-size: 28px;
+            font-weight: 400;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #desc {
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 35px;
+            text-align: center;
+            color: gray;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .para{
+            margin-top: -18px;
+        }
+        #btndownmac{
+            width: 250px;
+            margin-top: 20px;
+            height: 40px;
+            background-color: gold;
+            border: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navcontainer">
+        <img src="ue.png" alt="uelogo" id="imglogo">
+        <div class="names">
+            <ul class="navlist">
+                <span class="paratitle">Products</span>
+                <img src="downarrow.png" alt="downarrow" class="downarrow">
+                <span class="paratitle">Pricing</span>
+                <img src="downarrow.png" alt="downarrow" class="downarrow">
+                <span class="paratitle">Resources</span>
+                <img src="downarrow.png" alt="downarrow" class="downarrow">
+                <span class="paratitle">Our Company </span>
+                <img src="downarrow.png" alt="downarrow" class="downarrow">
+                <button id="btndownload">Download</button>
+                <img src="lang.svg" alt="langicon" id="langicon">
+                <span id="paralang">Langauge</span>
+                <img src="search.png" alt="searchicon" id="searchicon">
+            </ul>
+        </div>
+    </div>
+
+    <div class="headingcontainer">
+        <span id="heading">Download UltraEdit for Windows</span>
+        <img src="windowsos.svg" alt="WindowsOsIcon" id="oswin">
+    </div>
+    <div id="desc">
+        <p>Download and try UltraEdit before you buy it! This download
+        </p>
+        <p class="para"> includes the full Windows version of the text editor.</p>
+        <button id="btndownmac">Download Mac or Linux version</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Based on Css Grid</title>
+    <style>
+        .container {
+            /* border: 2px solid black; */
+            margin: 20px;
+            display: grid;
+            /* Using Grid Template Areas */
+            /* grid-template-areas: "box1 box2"
+                "box3 box4"
+                "box5 box6"
+                "box7 box8"
+                "box9 box10"
+            ; */
+
+            /* Using Grid Template Columns */
+            /* grid-template-columns: 300px 300px;
+            gap: 10px 30px; */
+
+            /* grid-template-columns: repeat(2, 300px); */
+            /* gap: 10px; */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
+
+
+            margin: 0 auto;
+            /* Centers horizontally */
+            width: fit-content;
+            /* Shrinks container to its content */
+        }
+
+        .box {
+            border: 2px solid rgb(221, 221, 221);
+            margin: 2px;
+            padding: 2px;
+            background-color: rgb(252, 252, 252);
+            width: 300px;
+            height: 200px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btndownload {
+            margin-left: 25px;
+            width: 160px;
+            padding: 10px;
+            background-color: gold;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .heading {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .subtitle {
+            margin-top: -5px;
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 0.5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .sha1 {
+            margin-top: 20px;
+            font-size: 8px;
+
+        }
+
+        .sha2 {
+            margin-top: 2px;
+            font-size: 7px;
+
+        }
+
+        @media screen and (max-width: 640px) {
+            .container {
+                grid-template-columns: 1fr;
+                /* Only one column */
+                width: 100%;
+                /* Full width on mobile */
+            }
+
+            .box {
+                width: 90%;
+                /* Prevent overflow */
+                margin: 0 auto;
+                /* Center boxes */
+            }
+        }
+
+        #item-1 {
+            /* Grid  Template Columns  */
+            /* grid-row: 1; 
+            grid-column: 1; */
+
+            /* Grid Template Areas */
+            /* grid-area: box1; */
+
+
+        }
+
+        #item-2 {
+            /* Grid  Template Columns  */
+            /* grid-row: 1; 
+            grid-column: 2; */
+
+            /* Grid Template Areas */
+            /* grid-area: box2; */
+        }
+
+        #item-3 {
+            /* Grid  Template Columns  */
+            /* grid-row: 2; 
+            grid-column: 1; */
+
+            /* Grid Template Areas */
+            /* grid-area: box3; */
+        }
+
+        #item-4 {
+            /* Grid  Template Columns  */
+            /* grid-row: 2; 
+            grid-column: 2; */
+
+            /* Grid Template Areas */
+            /* grid-area: box4; */
+        }
+
+        #item-5 {
+            /* Grid  Template Columns  */
+            /* grid-row: 3; 
+            grid-column: 1; */
+
+            /* Grid Template Areas */
+            /* grid-area: box5; */
+        }
+
+        #item-6 {
+            /* Grid  Template Columns  */
+            /* grid-row: 3; 
+            grid-column: 2; */
+
+            /* Grid Template Areas */
+            /* grid-area: box6; */
+        }
+
+        #item-7 {
+            /* Grid  Template Columns  */
+            /* grid-row: 4; 
+            grid-column: 1; */
+
+            /* Grid Template Areas */
+            /* grid-area: box7; */
+        }
+
+        #item-8 {
+            /* Grid  Template Columns  */
+            /* grid-row: 4; 
+            grid-column: 2; */
+
+            /* Grid Template Areas */
+            /* grid-area: box8; */
+        }
+
+        #item-9 {
+            /* Grid  Template Columns  */
+            /* grid-row: 5; 
+            grid-column: 1; */
+
+            /* Grid Template Areas */
+            /* grid-area: box9; */
+        }
+
+        #item-10 {
+            /* Grid  Template Columns  */
+            /* grid-row: 5; 
+            grid-column: 2; */
+
+            /* Grid Template Areas */
+            /* grid-area: box10; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="item-1">
+            <p class="heading">English</p>
+            <p class="subtitle">Includes all languages</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">64B95FA0C6F64CD3B6AD19A01AA74E4F303CC12C3B96F1AA129E0F632D8A1C8D</p>
+        </div>
+        <div class="box" id="item-2">
+            <p class="heading">Deutsch</p>
+            <p class="subtitle">German</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">
+                E28CD2AD874AF70FA19F40EA38B0CF6D713428B48C1E8071BF29346F22E471AF</p>
+        </div>
+        <div class="box" id="item-3">
+            <p class="heading">Italiano<p3>
+                    <p class="subtitle">Italian</p>
+                    <button class="btndownload">Download 64-bit</button>
+                    <p class="sha1">SHA256</p>
+                    <p class="sha2">2151AE87669109ABFF9C59D649B6A1DFBE5248887B30197EF030073D7A0541AA</p>
+        </div>
+        <div class="box" id="item-4">
+            <p class="heading">Español</p>
+            <p class="subtitle">Spanish</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">310133F6E6106FC5CB2F773C15F3C6CF11078EE2010341A5689CFF89A5249E26</p>
+        </div>
+        <div class="box" id="item-5">
+            <p class="heading">français<p3>
+                    <p class="subtitle">French</p>
+                    <button class="btndownload">Download 64-bit</button>
+                    <p class="sha1">SHA256</p>
+                    <p class="sha2">CDE2BD23594A0F64FA917DA7CD6DA2DC0D7DA87707BF52F85C6EBD42C5740069</p>
+        </div>
+        <div class="box" id="item-6">
+            <p class="heading">Portuguêsprasileiro</h3>
+            <p class="subtitle">
+                Brazilian Portuguese</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">78393C287890798FF5F1AC5FF47D0804CA33C5657BEAC363670D2880DF7249AF</p>
+        </div>
+        <div class="box" id="item-7">
+            <p class="heading">日本</h3>p
+            <p class="subtitle">Japanese</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">0A74B5BAC442664B2316CB2F93D0F0C0B6F29D0644C41A3BFA32F57AC6DBEA0B</p>
+        </div>
+        <div class="box" id="item-8">
+            <p class="heading">한국어</h3>p
+            <p class="subtitle">Korean</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">FF5E739331D6888C5C41C49755DE772F9009FDFC617CA5E467895AF9E25496DF</p>
+        </div>
+        <div class="box" id="item-9">
+            <p class="heading">华语</h3>p
+            <p class="subtitle">Chinese</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">0343A265060AED77D311FAA96E7B78234E37497F46687D1C8724F1D63AB9B113</p>
+        </div>
+        <div class="box" id="item-10">
+            <p class="heading">華語</h3>p
+            <p class="subtitle">Traditional Chinese</p>
+            <button class="btndownload">Download 64-bit</button>
+            <p class="sha1">SHA256</p>
+            <p class="sha2">FF56F6098FC6D8E897D8EB6378CFA245C048C37D6A92BCF59224CC82A4107297</p>
+        </div>
+    </div>
+</body>
+
+</html>
