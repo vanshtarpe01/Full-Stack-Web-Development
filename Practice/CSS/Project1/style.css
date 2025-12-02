@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    background-image: url(Assets/Images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(1200px, 100vw);
+    height: 95vh;
+    position: relative;
+}
+
+body {
+    background-color: black;
+}
+
+.main .box {
+    width: 100%;
+    height: 95vh;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    position: relative;
+    z-index: 10;
+
+}
+
+.nav {
+    display: flex;
+    max-width: 80vw;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    height: 90px;
+}
+
+#btnlang {
+    position: relative;
+    z-index: 10;
+}
+
+#btnsig {
+    position: relative;
+    z-index: 10;
+}
+
+.text {
+    height: calc(100% - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    font-family: "Martel Sans", sans-serif;
+    padding: 0px 30px;
+    gap: 24px;
+}
+
+.text> :nth-child(1) {
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: -30px;
+}
+
+.text> :nth-child(2) {
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.text> :nth-child(3) {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.text> :nth-child(4) {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+#btnGS {
+    padding: 16px 32px;
+    font-weight: 550;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+#btnsig {
+    padding: 6px 18px;
+    font-weight: 600;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+#btnlang {
+    padding: 6px 20px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.075);
+    border: 1px solid gray;
+    color: white;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+#inemail {
+    padding: 18px 136px 18px 16px;
+    font-weight: 550;
+    background-color: rgba(0, 0, 0, 0.233);
+    border: 1px solid gray;
+    color: white;
+    border-radius: 4px;
+    text-align: start;
+}
+
+.conatiner {
+    height: 100vh;
+    width: 95vw;
+    border-top: 4px solid rgb(143, 0, 0);
+    border-radius: 180px;
+}
+
+.innercontainer {
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    top: 10vh;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    max-width: 70vw;
+    margin: auto;
+    position: relative;
+    top: 12vh;
+    scroll-behavior: smooth;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.imgholder {
+    margin: 20px;
+    position: relative;
+    transition-property: all;
+    transition-duration: 1.1s;
+    transition-timing-function: ease-in;
+}
+
+.img-banner {
+    border-radius: 12px;
+    display: block;
+}
+
+.trendnumbers {
+    position: absolute;
+    bottom: -20px;
+    /* moves number down like Netflix */
+    left: -10px;
+    /* shift left slightly */
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 900;
+
+    color: black;
+    -webkit-text-stroke: 0.25rem white;
+    /* text-stroke: 0.25rem white; */
+
+    text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    /* number won't block clicks */
+}
+
+.imgholder:hover {
+    transform: scale(1.05);
+}
+
+.innercontainer1 {
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#headingbtc {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    top: 12vh;
+}
+
+.desccard {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    /* overflow-x: scroll; */
+    max-width: 80vw;
+    margin: auto;
+    position: relative;
+    top: 16vh;
+}
+
+.reason-card {
+    width: 400px;
+    height: 280px;
+    margin: 8px;
+    padding: 6px;
+    background-color: rgba(119, 101, 161, 0.185);
+    border: 2px solid rgba(71, 71, 71, 0.514);
+    box-shadow: inset 2px 2px 40px 3px rgba(162, 0, 255, 0.103);
+    border-radius: 12px;
+}
+
+.headingdc {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    display: block;
+    padding: 8px;
+    margin-top: 18px;
+}
+
+.desc {
+    color: rgb(212, 212, 212);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+    padding: 9px;
+}
+
+.innercontainer2 {
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#headingfaq {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    top: 20vh;
+}
+
+.faqcontainer {
+    /* margin-left: 30px; */
+    position: relative;
+    top: 22vh;
+}
+
+.tagqa {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.199);
+    padding: 20px;
+    margin: 12px;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.answer {
+    font-size: 18px;
+}
+
+.tagqa:hover {
+    background-color: rgba(255, 255, 255, 0.308);
+}
+
+.bottom-part {
+    width: 100vw;
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.bottom-desc {
+    position: relative;
+    top: 22vh;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+    color: white;
+}
+
+#bottom-inemail {
+    position: relative;
+    top: 24vh;
+    padding: 18px 38vw 18px 16px;
+    font-weight: 550;
+    background-color: rgba(0, 0, 0, 0.233);
+    border: 1px solid gray;
+    color: white;
+    border-radius: 4px;
+    text-align: start;
+}
+
+#btnGS-bottom {
+    position: relative;
+    top: 24vh;
+    padding: 16px 42px;
+    font-weight: 550;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 36px;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+footer{
+    width: 90vw;
+    height: 100px;
+    position: relative;
+    top: 160vh;
+    color: white;
+    left: 10vh;
+}
+
