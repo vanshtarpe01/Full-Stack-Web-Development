@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice Example 6</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: #374101;
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        .box1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: yellow;
+        }
+
+        .box2 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background-color: violet;
+        }
+
+        .box3 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            background-color: wheat;
+        }
+
+        .box4 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background-color: turquoise;
+        }
+
+        .box5 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background-color: tomato;
+        }
+
+        .box6 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background-color: thistle;
+        }
+
+        .box7 {
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: tan;
+        }
+
+        .box8 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background-color: springgreen;
+        }
+
+        .box9 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            background-color: crimson;
+        }
+
+        .box10 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background-color: coral;
+        }
+
+        .box11 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: burlywood;
+        }
+
+        .box12 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            background-color: slateblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="boxes box1"></div>
+        <div class="boxes box2"></div>
+        <div class="boxes box3"></div>
+        <div class="boxes box4"></div>
+        <div class="boxes box5"></div>
+        <div class="boxes box6"></div>
+        <div class="boxes box7"></div>
+        <div class="boxes box8"></div>
+        <div class="boxes box9"></div>
+        <div class="boxes box10"></div>
+        <div class="boxes box11"></div>
+        <div class="boxes box12"></div>
+    </div>
+</body>
+
+</html>

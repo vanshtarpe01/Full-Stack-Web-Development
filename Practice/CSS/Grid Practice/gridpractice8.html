@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice Example 8</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(58, 0, 48);
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .boxes{
+            background-color: tomato;
+        }
+        .box8{
+            grid-column-start: 3;
+            grid-column-end: 6;
+            background-color: cornflowerblue;
+        }
+        .box9{
+            grid-column-start: 1;
+            grid-column-end: 6;
+            background-color: aquamarine;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="boxes box1"></div>
+        <div class="boxes box2"></div>
+        <div class="boxes box3"></div>
+        <div class="boxes box4"></div>
+        <div class="boxes box5"></div>
+        <div class="boxes box6"></div>
+        <div class="boxes box7"></div>
+        <div class="boxes box8"></div>
+        <div class="boxes box9"></div>
+    </div>
+</body>
+
+</html>

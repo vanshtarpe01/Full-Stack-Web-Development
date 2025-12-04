@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice Example 7</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(88, 38, 2);
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .box1{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background-color: #ff5c5c;
+        }
+
+        .box2{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background-color: #ffcb5c;
+        }
+        .box3{
+            grid-row-start: 2;
+            grid-row-end: 5;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background-color: #c6ff5c;
+        }
+        .box4{
+            grid-row-start: 2;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background-color: #77ff5c;
+            display: grid;
+            padding: 2rem;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .cards{
+            background-color: #24c4cf;
+        }
+        .card1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxes box1"></div>
+        <div class="boxes box2"></div>
+        <div class="boxes box3"></div>
+        <div class="boxes box4">
+            <div class="cards card1"></div>
+            <div class="cards card2"></div>
+            <div class="cards card3"></div>
+        </div>
+    </div>
+</body>
+</html>

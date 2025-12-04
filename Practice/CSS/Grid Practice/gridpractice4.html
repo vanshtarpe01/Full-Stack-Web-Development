@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice Example 4</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(25, 1, 48);
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+        .box1{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: aqua;
+        }
+        .box2{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 4;
+            grid-column-end: 7;
+            background-color: rgb(255, 101, 101);
+        }
+        .box3{
+            grid-row-start: 3;
+            grid-row-end: 6;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: yellow;
+        }
+        .box4{
+            grid-row-start: 3;
+            grid-row-end: 6;
+            grid-column-start: 3;
+            grid-column-end: 7;
+            background-color: snow;
+        }
+        .box5{
+            grid-column-start: 1;
+            grid-column-end: 7;
+            background-color: burlywood;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxes box1"></div>
+        <div class="boxes box2"></div>
+        <div class="boxes box3"></div>
+        <div class="boxes box4"></div>
+        <div class="boxes box5"></div>
+    </div>
+</body>
+</html>
