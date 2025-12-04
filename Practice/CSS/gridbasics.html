@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Basic to Advance</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .contianer {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(97, 97, 97);
+            display: grid;
+            padding: 1rem;
+            gap: 1rem;
+
+            /* grid-template-columns: 100px 100px 100px; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* 3 Columns 2 Rows */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* grid-template-rows: 100px 100px; */
+            /* grid-template-rows: 1fr 1fr; */
+            /* grid-template-rows: repeat(2, 1fr); */
+
+            /* 2 Columns and 3 Rows */
+            /* grid-template-columns: 1fr 1fr; */
+            /* grid-template-columns: repeat(2, 1fr); */
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            /* grid-template-rows: repeat(3, 1fr); */
+
+            /* grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr); */
+
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .items {
+            background-color: rgb(0, 162, 255);
+            border: 2px solid black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* font-size: 2rem; */
+        }
+
+        @media screen and (min-width:768px) {
+            .contianer {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+            .header {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            .footer {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            .side-bar {
+                grid-row-start: 2;
+                grid-row-end: 4;
+            }
+
+            .content-1 {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contianer">
+        <div class="items header">Header</div>
+        <div class="items side-bar">Side Bar</div>
+        <div class="items content-1">Content 1</div>
+        <div class="items content-2">Content 2</div>
+        <div class="items content-3">Content 3</div>
+        <div class="items footer">Footer</div>
+    </div>
+</body>
+
+</html>

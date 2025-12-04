@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Designing Exercise 3</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f79e;
+            background: radial-gradient(circle, rgba(240, 247, 158, 1) 0%, rgba(212, 255, 214, 1) 100%);
+        }
+
+        .innercontainer {
+            width: 60%;
+            margin: auto;
+            height: 400px;
+            display: flex;
+            background-color: rgb(75, 0, 56);
+        }
+        .detailscontainer{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 50px;
+        }
+        .otherdetailscontainer{
+            display: flex;
+            gap: 40px;
+        }
+        .text{
+            color: white;
+        }
+        #heading{
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="innercontainer">
+            <div class="detailscontainer">
+                <h2 class="text" id="heading">Get insights that help your business grow</h2>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam enim quam hic a, officiis quibusdam
+                    doloremque deserunt qui minima consectetur non quas modi assumenda eligendi alias quisquam delectus
+                    eum labore tenetur itaque. Fuga, culpa quasi? Accusantium assumenda dolorum iusto ea.</p>
+                <div class="otherdetailscontainer">
+                    <div>
+                        <h2 class="text">10K+</h2>
+                        <p class="text">Comments</p>
+                    </div>
+                    <div>
+                        <h2 class="text">214</h2>
+                        <p class="text">Paid Users</p>
+                    </div>
+                    <div>
+                        <h2 class="text">12M+</h2>
+                        <p class="text">Views</p>
+                    </div>
+                </div>
+            </div>
+            <img src="img3.jpg" alt="Image" id="image">
+        </div>
+    </div>
+</body>
+
+</html>
