@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
 }
-.container{
+
+.container {
     width: 80%;
     margin: auto;
     display: flex;
@@ -17,47 +19,138 @@ body{
     padding: 2rem;
     gap: 2rem;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
     align-items: center;
 }
-.card-container{
-    height: 28rem;
-    width: 20rem;
-    border-radius: 0.8rem;
-    background-color: blueviolet;
-    border: 2px solid black;
+
+#header-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
 }
-.cards{
+
+#header-desc1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1;
+    color: rgb(85, 84, 84);
+}
+
+#header-desc2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: -0.6rem;
+    text-align: center;
+    color: gray;
+}
+
+.card-container {
+    height: 440px;
+    width: 300px;
+    border-radius: 0.8rem;
+    border: 2px solid gainsboro;
+    overflow: hidden;
+}
+
+.cards {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.card-details{
-    display: flex;
-    flex-direction: column;
+
+.card_image_container{
+    position: relative;
+    overflow: hidden;
+    height: 7rem;
 }
-.card-other-details{
-    display: flex;
-    justify-content: space-between;
-}
-.image-name{
-    display: flex;
-}
-.date-name{
-    display: flex;
-    flex-direction: column;
-}
-.person-image{
-    height: 2rem;
-    width: 2rem;
-}
-.cardimage{
-    width: 19.8rem;
-    height: 12rem;
+.cardimage {
+    width: 300px;
+    height: 230px;
     border-radius: 0.8rem 0.8rem 0rem 0rem;
     object-fit: cover;
+}
+.card_image{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    transition: transform 0.8s ease;
+    height: 100%;
+    width: 100%;
+}
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card-details .card-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.card-details .card-desc {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgb(85, 84, 84);
+}
+
+.card-other-details {
+    padding: 6px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.image-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-name {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: rgb(85, 84, 84);
+}
+
+.person-image {
+    height: 25px;
+    width: 25px;
+}
+.colorblack{
+    color: black;
+}
+.dgary{
+    color: grey;
+}
+
+.card-other-details .tag {
+    padding: 8px 10px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgb(56, 56, 56);
+}
+
+.card-container:hover .cardimage {
+    transform: scale(1.1);
 }

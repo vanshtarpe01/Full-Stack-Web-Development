@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to apply background to image and other property also</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-family: Helvetica;
+            font-size: 156px;
+            background-image: url(img4.jpg);
+            background-position: 10% 20%;
+            /* background-size: cover; */
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+        .glow{
+            font-family: Helvetica;
+            font-size: 156px;
+            position: absolute;
+            filter: blur(20px) saturate(320%) brightness(120%);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>I am Text</h1>
+    <h1 class="glow">I am Text</h1>
+</body>
+</html>
