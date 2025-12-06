@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.card-container{
+    height: 28rem;
+    width: 20rem;
+    border-radius: 0.8rem;
+    background-color: blueviolet;
+    border: 2px solid black;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-details{
+    display: flex;
+    flex-direction: column;
+}
+.card-other-details{
+    display: flex;
+    justify-content: space-between;
+}
+.image-name{
+    display: flex;
+}
+.date-name{
+    display: flex;
+    flex-direction: column;
+}
+.person-image{
+    height: 2rem;
+    width: 2rem;
+}
+.cardimage{
+    width: 19.8rem;
+    height: 12rem;
+    border-radius: 0.8rem 0.8rem 0rem 0rem;
+    object-fit: cover;
+}

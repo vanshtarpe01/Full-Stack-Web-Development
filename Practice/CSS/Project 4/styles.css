@@ -1,0 +1,264 @@
+:root {
+    --gray: #212121;
+    --green: #009660;
+    --white: #e9e9e9;
+    --black: #0c0c0c;
+    --lgray: #929292;
+}
+
+@font-face {
+    font-family: neue;
+    src: url(Resources/NeueMachina-Light_gwWCZxVuQl.ttf);
+}
+
+@font-face {
+    font-family: hel;
+    src: url(Resources/HelveticaNowDisplay-Light_M4nzWhve6k.ttf);
+}
+
+@font-face {
+    font-family: gil;
+    src: url(Resources/Gilroy-Bold_JK4cTGJOE.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: var(--white);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: var(--black);
+}
+
+.green {
+    color: var(--green);
+}
+
+.lgray {
+    color: var(--lgray);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 15px 70px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.nav1 {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav1 h4 {
+    font-family: neue;
+    font-weight: 100;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.nav1 img {
+    height: 45px;
+}
+
+.navlist {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navlist li i {
+    font-size: 20px;
+}
+
+.navlist img {
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+}
+
+.navlist li {
+    font-family: neue;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.nav3 {
+    display: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav3 h4 {
+    font-family: neue;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.nav3 img {
+    height: 25px;
+    border-radius: 50%;
+    width: 25px;
+}
+
+@media screen and (max-width:600px) {
+    nav {
+        padding: 13px 20px;
+    }
+
+    .nav1 img {
+        height: 30px;
+    }
+
+    .nav1 h4 {
+        font-size: 12px;
+    }
+
+    .navlist {
+        display: none;
+    }
+
+    .nav3 {
+        display: flex;
+    }
+}
+
+main {
+    padding-top: 100px;
+}
+
+
+.section1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px 70px;
+    font-family: hel;
+    gap: 40px;
+}
+
+/* LEFT SIDE */
+.section1 .left {
+    width: 45%;
+}
+
+.section1 .left h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.2;
+}
+
+.section1 .left .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 25px 0;
+}
+
+.section1 .left .cta {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.cta button {
+    background: var(--green);
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.cta button:nth-child(2) {
+    background: var(--gray);
+}
+
+/* RIGHT SIDE */
+.section1 .right .right-in {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.section1 .right .right-in .image {
+    width: 100%;
+    height: min(350px, 55vw);
+}
+
+.section1 .right .right-in .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section1 .right .right-in .image-bottom {
+    padding: 20px;
+    background-color: var(--gray);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.image-bottom h4 {
+    background-color: #151515;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 48%;
+    font-size: clamp(12px, 1.6vw, 16px);
+}
+
+@media screen and (max-width:1000px) {
+    .section1 {
+        padding: 15px 40px;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section1 .left {
+        width: 100%;
+    }
+
+    .cta {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section1 {
+        padding: 15px 4vw;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .section1 .left {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .section1 .right .right-in .image {
+        height: 60vw;
+    }
+
+    .image-bottom h4 {
+        width: 48%;
+        font-size: 3.2vw;
+    }
+
+    .cta button {
+        width: 100%;
+        padding: 14px 0;
+    }
+}
