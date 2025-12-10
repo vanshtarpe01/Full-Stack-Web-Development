@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid template area</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            background-color: rgb(61, 17, 2);
+            display: grid;
+            gap: 0.5rem;
+            grid-template-areas: "nav nav nav"
+                                "sidebar content1 content1"
+                                "sidebar content2 content3"
+                                "footer footer footer"
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav{
+            grid-area: nav;
+            background-color: aquamarine;
+        }
+        .sidebar{
+            grid-area: sidebar;
+            background-color: cadetblue;
+        }
+        .content-1{
+            grid-area: content1;
+            background-color: yellow;
+        }
+        .content-2{
+            grid-area: content2;
+            background-color: turquoise;
+        }
+        .content-3{
+            grid-area: content3;
+            background-color: teal;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box nav">Navigation Bar</div>
+        <div class="box sidebar">Side Bar</div>
+        <div class="box content-1">Content 1</div>
+        <div class="box content-2">Content 2</div>
+        <div class="box content-3">Content 3</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+</html>
