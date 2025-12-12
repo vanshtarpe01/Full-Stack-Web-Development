@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Declarations</title>
+    <script>
+        // 1. Declare a variable using var, let, and const. Print all three.
+        var num1 = 10;
+        let num2 = 20;
+        const pi = 3.14;
+        console.log(num1);
+        console.log(num2);
+        console.log(pi);
+
+        // 2. Store your name, age, and city in variables and print them in one sentence.
+        let name = "Vansh";
+        let age = 19;
+        let city = "Amravati";
+        console.log(name);
+        console.log(age);
+        console.log(city);
+
+        // 3. Declare a variable without a value. Later assign a value and print before and after.
+        let sirname;
+        console.log(sirname)
+        sirname = "Tarpe";
+        console.log(sirname);
+        var username;
+        console.log(username);
+        username = "x_vansh_15";
+        console.log(username);
+
+        // 4. Create two number variables and print their sum, product, and difference.
+        let number1 = 20;
+        let number2 = 50;
+        console.log("Sum :- ", number1+number2);
+        console.log(`Product :- ${number1*number2}`);
+        console.log(`Difference :- ${number2-number1}`);
+
+        // 5. Swap two variable values (a and b) using a third variable.  
+        let a = 10;
+        let b = 20;
+        console.log("Before Swapping : ");
+        console.log(`A : ${a}`);
+        console.log(`B : ${b}`); 
+        let c;
+        c = a;
+        a = b;
+        b = c;     
+        console.log("After Swapping : ");
+        console.log(`A : ${a}`);
+        console.log(`B : ${b}`);
+
+        // 6. Swap two variable values (a and b) without using a third variable. 
+        let d = 10;
+        let e = 20;
+        console.log("Before Swapping(Without Third Variable) : ");
+        console.log(`A : ${d}`);
+        console.log(`B : ${e}`); 
+        d = d+e; //30
+        e = d - e; //30 - 20 = 10
+        d = d - e; // 30 - 10 = 20
+        console.log("After Swapping(Without Third Variable) : ");
+        console.log(`A : ${d}`);
+        console.log(`B : ${e}`);
+
+        // 7. Declare a variable count with var, increment it by 5, and print it.
+        let count = 10;
+        count = count + 5;
+        console.log(count);
+
+        // 8. Use var inside a block and print it outside block.
+        {
+            let y = 100;
+            var x = 200;
+        }
+        //console.log(y); // It will raised an ReferenceError y is not defined
+        console.log(x);
+
+        // 9. Create var variables for three numbers and print their average.
+        let q = 10;
+        let r = 90;
+        let s = 20;
+        console.log("Avg :- ", (q+r+s)/3);
+
+        // 10. Create two let variables and calculate square of both.
+        let t = 6;
+        let u = 12;
+        console.log(`Square of number ${t} is :- ${t*t}`);
+        console.log(`Square of number ${u} is :- ${u*u}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
