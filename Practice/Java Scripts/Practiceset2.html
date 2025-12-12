@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types + Type System</title>
+    <script>
+        // 1. Declare one variable of each primitive type (string, number, boolean, null, undefined, symbol, bigint) and print all types using typeof.
+        {
+            let a = 10;
+            let b = true;
+            let c = "String";
+            let d = null;
+            let e = undefined;
+
+            console.log(typeof a);
+            console.log(typeof b);
+            console.log(typeof c);
+            console.log(typeof d);
+            console.log(typeof e);
+        }
+
+        // 2. Create a number and convert it to a string using two methods.
+        {
+            let num1 = 222;
+            let str1 = num1.toString();
+            console.log(typeof str1);
+            let num2 = 2983;
+            let str2 = String(num2);
+            console.log(typeof str2);
+        }
+
+        // 3. Create a string and convert it to a number using Number() and parseInt().
+        {
+            let str1 = "7890";
+            let num1 = parseInt(str1);
+            let str2 = "129"
+            let num2 = Number(str2);
+            console.log(typeof num1);
+            console.log(typeof num2);
+        }
+
+        // 4. Write a program to detect the type of user input (prompt) and print the result.
+        {
+            let num = prompt("Enter a Number : ");
+            console.log("Number Entered by user is : ", num)
+        }
+
+        // 5. Write a program that checks if a number is integer using Number.isInteger().
+        {
+            let num = 299;
+            console.log(Number.isInteger(num));
+        }
+
+        // 6. Convert a boolean value to a number.
+        {
+            let val = true;
+            let num = Number(val);
+            console.log(num);
+            let num1 = +val;
+            console.log(num1);
+        }
+
+        // 7. Create a bigint value and perform addition with another bigint.
+        {
+                let big1 = 12345678901234567890n;
+                let big2 = 98765432109876543210n;
+
+                let sum = big1 + big2;
+
+                console.log("BigInt Sum:", sum);
+        }
+
+        //8. Create a variable with value null, check its type, and print
+        {
+            let num = null;
+            console.log(typeof num);
+            //Explanation: In JavaScript, typeof null returns 'object' because of a historical bug in the language Null is actually a primitive type, not an object, but typeof incorrectly reports it as 'object'.
+        }
+
+        // 9. Take user input using prompt() and print its type.
+        {
+            let a = prompt("Enter a number : ");
+            console.log(typeof a);
+        }
+
+        // 10. Create two bigint numbers (10n and 20n), add them, and print the result.
+        {
+            let a = 10n;
+            let b = 20n;
+            console.log(a+b);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
