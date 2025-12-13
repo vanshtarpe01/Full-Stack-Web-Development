@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JS</title>
+    <script>
+        // 1. Print numbers from 1 to 10 using a for loop.
+        {
+            for (let i = 1; i < 11; i++) {
+                console.log(i);
+            }
+        }
+
+        // 2. Print numbers from 10 to 1 using a while loop.
+        {
+            let i = 10;
+            while(i>0){
+                console.log(i)
+                i--;
+            }
+        }
+
+        // 3. Print all even numbers between 1 and 20.
+        {
+
+            for(let i=1; i<21; i++){
+                if(i%2===0){
+                    console.log(i);
+                }
+            }
+            
+            let i = 1;
+
+            // while(i<21){
+            //     if(i%2===0){
+            //         console.log(i);
+            //     }
+            //     i++;
+            // }
+
+            do{
+                 if(i%2===0){
+                    console.log(i);
+                }
+                i++;
+            }while(i<21);
+        }
+
+        // 4. Find the sum of numbers from 1 to N.
+        {
+            let num = 10;
+            sum =0;
+            for(let i=0; i<=num; i++){
+                sum += i;
+            }
+            console.log(sum);
+        }
+
+        // 5. Print the multiplication table of a given number.
+        {
+            let num = 6;
+            for(let i =1; i<=10; i++){
+                console.log(`${num} X ${i} = ${num*i}`);
+            }
+        }
+
+        // 6. Reverse a number using a loop.
+        {
+            let num= 2939;
+            reversed = 0;
+            while(num>0){
+                let digit = num%10;
+                reversed = reversed *10+ digit;
+                num = parseInt(num/10);
+            }
+            console.log("Reversed Number :- ", reversed);
+        }
+
+        // 7. Print the factorial of a number.
+        {
+            let num = 6;
+            let fact = 1;
+            for(let i =1; i<=num; i++){
+                fact *= i;
+            }
+            console.log(fact);
+        }
+
+        //8. Print the Fibonacci series up to N terms.
+        {
+            let n = 10; //No of terms
+            let no1 = 1, no2 = 2, nextterm;
+
+            console.log("Fibonacci Series :- ");
+            for(let i = 1; i<= n; i++){
+                console.log(no1);
+                nextterm = no1 +no2;
+                no1 = no2;
+                no2 = nextterm;
+            }
+        }
+
+        // 9. Check whether a number is prime using loops.
+        {
+            let num = 12;
+            isPrime = true;
+            if(num<=1){
+                isPrime = false;
+            }else{
+                for(let i = 2; i<= num/2; i++){
+                    if(num%2===0){
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            console.log(isPrime ? "Prime number" : "Not a prime number");
+        }
+
+        // 10. Print all odd numbers between 1 and 50.
+        {
+            for(let i =1; i<= 50; i++){
+                if(i%2!==0) console.log(i);
+            }
+        }
+
+        // 11. Check whether a number is a palindrome using loops.
+        {
+            let num = 12321;
+            let og = num;
+            let reversed = 0;
+            while(num>0){
+                let digit = num % 10;
+                reversed = reversed *10 +digit;
+                num = parseInt(num/10);
+            }
+            console.log(reversed);
+            if(og == reversed) console.log("Palindrome");
+            else console.log("Not Pailndrome");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

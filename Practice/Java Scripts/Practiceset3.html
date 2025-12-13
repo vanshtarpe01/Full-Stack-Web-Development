@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators in JS</title>
+    <script>
+        // 1. Write a program to demonstrate all arithmetic operators using two numbers.
+        {
+            let num1 = 20;
+            let num2 = 40;
+            console.log(`Addition :- ${num1 + num2}`);
+            console.log(`Subctraction :- ${num2 - num1}`);
+            console.log(`Multiplication :- ${num1 * num2}`);
+            console.log(`Divison :- ${num2 / num1}`);
+            console.log(`Power :- ${num1 ** num2}`);
+            console.log(`Remainder :- ${num2 % num1}`);
+        }
+
+        // 2. Write a program to check equality using both == and ===.
+        {
+            let a = 10;
+            let b = '10';
+            let c = 10;
+            console.log(a == b); //True
+            console.log(a === b); //False
+            console.log(a === c); //True
+        }
+
+        // 3. Write a program to demonstrate pre-increment and post-increment.
+        {
+            let a = 5;
+            console.log(a++); // It will print 5 and then increment
+            console.log(++a); //It will first 5+1+1 and then print
+        }
+        // 4. Write a program to check if a number is even or odd using the modulus operator.
+        {
+            let num = 9;
+            response = num % 2 === 0 ? true : false;
+            console.log(response);
+        }
+
+        // 5. Write a program to find the largest of two numbers using comparison operators.
+        {
+            let num1 = 10;
+            let num2 = 11;
+            greater = num1 > num2 ? "First is Greater" : "Second is Greater";
+            console.log(greater);
+        }
+
+        // 6. Write a program to demonstrate logical AND (&&) and OR (||) operators.
+        {
+            let num1 = 40;
+            let num2 = 30;
+            let num3 = 10;
+            greater = num1 > num2 && num2 > num3 ? "First number is Greater" : num1 < num2 && num2 > num3 ? "Second number is Greater" : "Third number is Greater";
+            console.log(greater);
+        }
+
+        // 7. Write a program to swap two numbers using arithmetic operators (without third variable).
+        {
+            let num1 = 40;
+            let num2 = 80;
+            console.log(`Before Swapping A: ${num1} and B:${num2}`);
+            num1 = num1 + num2; //120
+            num2 = num1 - num2; // 120-80 = 40
+            num1 = num1 - num2; //120-40 = 80
+            console.log(`After Swapping A: ${num1} and B: ${num2} `);
+        }
+
+        // 8. Write a program to check if a number is positive, negative, or zero using operators.
+        {
+            let num1 = 12;
+            ans = num1 > 0 ? "Positive" : num1 === 0 ? "Zero" : "Negative";
+            console.log(ans);
+        }
+
+        // 9. Write a program to calculate the power of a number using the exponent operator (**).
+        {
+            let num = 5;
+            let square = num ** 2; //Square
+            let cube = num ** 3; //Cube
+            let power = num ** num;
+            console.log(`Square :- ${square}`);
+            console.log(`Cube :- ${cube}`);
+            console.log(`Power :- ${power}`);
+        }
+        //10. Write a program to demonstrate assignment operators (+=, -=, *=, /=).
+        {
+            let num = 90;
+            //Compound Operator is like a = a+1 or a += 1 are same;
+            console.log(`90 += 5 : ${num += 5}`);
+            console.log(`90 -= 5 : ${num -= 5}`);
+            console.log(`90 *= 5 : ${num *= 5}`);
+            console.log(`450 /= 5 : ${num /= 5}`);
+        }
+
+        //11. Write a program to demonstrate all comparison operators.
+        {
+            // < > <= >= == === != !==
+            console.log(`10 > 9 : ${10 > 9}`); //Greater than
+            console.log(`10 < 9 : ${10 < 9}`); //Less than 
+            console.log(`22 >= 19 : ${22 >= 19}`); //Greater than or equal
+            console.log(`22 <= 22 : ${22 <= 22}`); //Less than or equal
+            console.log(`14 =="14" : ${14 == "14"}`); // equal to
+            console.log(`12 === "12" : ${12 === "12"}`); //strict equal 
+            console.log(`13 !=="13" : ${13 !== "13"}`); //strict not equal
+            console.log(`13 != "13" : ${13 != "13"}`); // not equal
+        }
+
+        // 12. Write a program to evaluate an expression using multiple operators and print the result.
+        {
+            let a = ((12 * 12) / 6 + 12) % 7; // 1
+            console.log(a);
+        }
+
+        // 13. Write a program to demonstrate bitwise AND, OR, and XOR.
+        {
+            //Binary :-         8 4 2 1
+            let a = 10;      // 1 0 1 0
+            let b = 12;      // 1 1 0 0
+            let c = 15;      // 1 1 1 1
+            let and = a & b; // 1 0 0 0 : 8
+            let or = a | c;  // 1 1 1 1 : 15
+            let xor = a ^ c; // 0 1 0 1 : 5
+            console.log(and);
+            console.log(or);
+            console.log(xor);
+        }
+
+        // 14. Write a program to check eligibility to vote using the ternary operator.
+        {
+            let age = 19;
+            console.log(age >= 18 ? "You can Vote..." : "You can't Vote...");
+        }
+
+        // 15. Write a program to calculate compound interest using operators.
+        {
+            let rate = 5;
+            let time = 10;
+            let principal = 1000;
+            let anually = 1;
+            let amount = principal * (1 + (rate / 100) / anually) ** (anually * time);
+            console.log(amount);
+        }
+
+        // 16. Write a program to demonstrate logical NOT operator.
+        {
+            console.log(!true);
+        }
+
+        // 17. Write a program to swap two numbers using bitwise XOR.
+        {
+            // Binary              16 8 4 2 1
+            let num1 = 10;      // 0  1 0 1 0
+            let num2 = 20;      // 1  0 1 0 0
+            console.log(`Number Before Swapping Num1: ${num1} and Num2 : ${num2}`);
+            num1 = num1 ^ num2; // 1  1 1 1 0 = 30 
+            num2 = num1 ^ num2; // 0  1 0 1 0 = 10
+            num1 = num1 ^ num2; // 1  0 1 0 0 = 20
+            console.log(`Number After Swapping Num1: ${num1} and Num2 : ${num2}`);
+
+        }
+
+        // 18. Write a program to demonstrate operator precedence.
+        {
+            let a = 10;
+            let b = 5;
+            let c = 2;
+            console.log("Without parentheses:", a + b * c);   // 10 + (5 * 2) = 20
+            console.log("With parentheses:", (a + b) * c);   // (10 + 5) * 2 = 30
+        }
+
+        // 19. Write a program to check if a number lies between two numbers using logical operators.
+        {
+            let num1 = 10;
+            let num2 = 15;
+            let num3 = 20;
+            console.log(num2 <= num3 && num2 >= num1 ? "Number 2 is lies between" : "Number 2 doesnt lies between");
+            console.log(num1 <= num2 && num2 <= num3);
+        }
+
+        // 20. Write a program to demonstrate pre-increment and post-increment in one expression.
+        {
+            let a = 5;
+            console.log(a++ + ++a); // 5, then it will be 6, 6+1 7 and 5+7 = 12
+        }
+
+        // 21. Write a program to check if a number is even or odd using bitwise AND.
+        {
+            //Binary :-       8 4 2 1
+            let num1 = 8;  // 1 0 0 0
+            let num2 = 9;  // 1 0 0 1
+            //& with num1     0 0 0 0
+            //& with num2     0 0 0 1
+            console.log((num1 & 1) === 0 ? "Even" : "Odd");
+            console.log((num2 & 1) === 0 ? "Even" : "Odd");
+        }
+
+        // 22. Find the greatest of three numbers using nested ternary operator
+        {
+            let num1 = 18;
+            let num2 = 33;
+            let num3 = 45;
+            let greater = num1 > num2 ? (num1>num3? num1 : num3) : (num2>num3? num2: num3);
+            console.log(`Greater Number is :- ${greater}`);
+        }
+
+        // 23. Write a program to demonstrate left shift and right shift.
+        {
+            //Binary            32  16  8  4  2  1
+            let a = 15;  //             1  1  1  1       15 
+            //LeftShift << By 1      1  1  1  1  0       30 (15*2)
+            console.log(a<<1); 
+            //LeftShift << By 2   1  1  1  1   0  0      60  (30*2)
+            console.log(a<<2);
+            let b = 60;  //       1  1  1  1   0  0      60 
+            //Right Shift >> by1  0  1  1  1   1  0      30   (60/2)
+            console.log(b>>1);
+            //Right Shift >> by1  0  0  1  1   1  1      15   (30/2)
+            console.log(b>>2);
+        }
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow</title>
+    <script>
+        // 1. Write a program to check if a number is positive, negative, or zero using if-else.
+        {
+            let num = 12;
+            if (num > 0) {
+                console.log("Positive Number..");
+            }
+            else if (num === 0) {
+                console.log("Zero..")
+            } else {
+                console.log("Negative Number..")
+            }
+        }
+
+        // 2. Write a program to check if a number is divisible by both 3 and 5 using if-else.
+        {
+            let num = 15;
+            if (num % 3 === 0 && num % 5 === 0) {
+                console.log("Yes, number is divsible by both 3 and 5");
+            } else {
+                console.log("Not Divisible By 3 and 5..");
+            }
+        }
+
+        // 3. Write a program to find the grade of a student using if-else.
+        {
+            let studper = 92;
+            if (studper >= 90) {
+                console.log("OutStanding...");
+            } else if (studper >= 85) {
+                console.log("A+");
+            } else if (studper >= 75) {
+                console.log("A");
+            } else if (studper >= 65) {
+                console.log("B");
+            } else if (studper >= 55) {
+                console.log("C");
+            } else if (studper >= 45) {
+                console.log("D");
+            } else if (studper >= 35) {
+                console.log("Boundary Pass");
+            } else {
+                console.log("Fail");
+            }
+        }
+
+        // 4. Write a program to check day name based on day number (1–7) using switch case.
+        {
+            let daynumber = 2;
+            switch (daynumber) {
+                case 1: console.log("Sunday");
+                    break;
+                case 2: console.log("Monday");
+                    break;
+                case 3: console.log("Tuesday");
+                    break;
+                case 4: console.log("Wednesday");
+                    break;
+                case 5: console.log("Thursday");
+                    break;
+                case 6: console.log("Friday");
+                    break;
+                case 7: console.log("Saturday");
+                    break;
+                default: console.log("Please Give valid input between 1-7");
+            }
+        }
+
+        // 5. Write a program to check whether a number is even or odd using if-else.
+        {
+            let num = 5;
+            if (num % 2 === 0) {
+                console.log("Even..");
+            } else {
+                console.log("Odd..");
+            }
+        }
+
+        // 6. Write a program to check month name based on month number (1–12) using switch case.
+        {
+            let monthnumber = 9;
+            switch (monthnumber) {
+                case 1: console.log("January");
+                    break;
+                case 2: console.log("Febuary");
+                    break;
+                case 3: console.log("March");
+                    break;
+                case 4: console.log("April");
+                    break;
+                case 5: console.log("May");
+                    break;
+                case 6: console.log("June");
+                    break;
+                case 7: console.log("July");
+                    break;
+                case 8: console.log("August");
+                    break;
+                case 9: console.log("September");
+                    break;
+                case 10: console.log("October");
+                    break;
+                case 11: console.log("November");
+                    break;
+                case 12: console.log("December");
+                    break;
+                default: console.log("Please enter a valid input between 1-12");
+            }
+        }
+
+        // 7. Write a program to check number in english based on number (0-9) using switch case.
+        {
+            let num = 10;
+            switch (num) {
+                case 0: console.log("Zero");
+                    break;
+                case 1: console.log("One");
+                    break;
+                case 2: console.log("Two");
+                    break;
+                case 3: console.log("Three");
+                    break;
+                case 4: console.log("Four");
+                    break;
+                case 5: console.log("Five");
+                    break;
+                case 6: console.log("Six");
+                    break;
+                case 7: console.log("Seven");
+                    break;
+                case 8: console.log("Eight");
+                    break;
+                case 9: console.log("Nine");
+                    break;
+                default: console.log("Please give proper input between (0-9)")
+            }
+        }
+
+        // 8. Write a program to find the grade of a student using switch-case
+        {
+            let studper = 92;
+            switch (true) {
+                case (studper >= 90):
+                    console.log("OutStanding...");
+                    break;
+                case (studper >= 85):
+                    console.log("A+");
+                    break;
+                case (studper >= 75):
+                    console.log("A");
+                    break;
+                case (studper >= 65):
+                    console.log("B");
+                    break;
+                case (studper >= 55):
+                    console.log("C");
+                    break;
+                case (studper >= 45):
+                    console.log("D");
+                    break;
+                case (studper >= 35):
+                    console.log("Boundary Pass");
+                    break;
+                default:
+                    console.log("Fail");
+            }
+        }
+
+        // 9. Write a program to check vowel or consonant using switch case.
+        {
+            let char = 'a';
+            switch (char) {
+                case 'a':
+                    console.log("Vowel");
+                    break;
+                case 'e':
+                    console.log("Vowel");
+                    break;
+                case 'i':
+                    console.log("Vowel");
+                    break;
+                case 'o':
+                    console.log("Vowel");
+                    break;
+                case 'u':
+                    console.log("Vowel");
+                    break;
+                case 'A':
+                    console.log("Vowel");
+                    break;
+                case 'E':
+                    console.log("Vowel");
+                    break;
+                case 'I':
+                    console.log("Vowel");
+                    break;
+                case 'O':
+                    console.log("Vowel");
+                    break;
+                case 'U':
+                    console.log("Vowel");
+                    break;
+                default:
+                    console.log("Consonant");
+            }
+        }
+
+        // 10. Write a program to find the largest of three numbers using if-else.
+        {
+            let num1 = 29;
+            let num2 = 23;
+            let num3 = 12;
+
+            if(num1>num2 && num2>num3){
+                console.log("Num1 Is Greater..");
+            }else if(num3>num2 && num3>num1){
+                console.log("Num3 Is Greater..");
+            }else{
+                console.log("Num2 Is Greater..");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
