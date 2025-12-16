@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+    <script>
+        // 1. Write a function to print “Hello World”.
+        {
+            function helloworld() {
+                console.log("Hello World");
+            }
+            helloworld();
+        }
+
+        // 2. Write a function that takes two numbers and returns their sum.
+        {
+            let num1 = 10;
+            let num2 = 30;
+            function add(a, b) {
+                return num1 + num2;
+            }
+
+            console.log(add(num1, num2));
+        }
+
+        // 3. Write a function to check whether a number is even or odd.
+        {
+            let num = 4;
+            function evenodd(a) {
+                if (num % 2 === 0) {
+                    console.log("Even");
+                } else {
+                    console.log("Odd");
+                }
+            }
+            evenodd(num);
+        }
+
+        // 4. Write a function to find the square of a number.
+        {
+            let num = 3;
+            function square(a) {
+                return num ** 2;
+            }
+            console.log(square(num));
+        }
+
+        // 5. Write a function to find the maximum of two numbers.
+        {
+            let num1 = 123;
+            let num2 = 234;
+            function max(a, b) {
+                if (num1 > num2) {
+                    return num1;
+                } else {
+                    return num2;
+                }
+            }
+            console.log(max(num1, num2));
+        }
+
+        // 6. Write a function to check whether a number is positive, negative, or zero.
+        {
+            let num = -12;
+            function numberCheck(a) {
+                if (num > 0) {
+                    return "Positive";
+                } else if (num === 0) {
+                    return "Zero";
+                } else {
+                    return "Negative";
+                }
+            }
+            console.log(numberCheck(num));
+        }
+
+        // 7. Write a function that prints numbers from 1 to N.
+        {
+            let n = 12;
+            //Using For Loop
+            function numbersloop(a) {
+                for (let i = 1; i <= n; i++) {
+                    console.log(i);
+                }
+            }
+            numbersloop(n);
+            //Using Recursive
+            function numbersrecursive(current, a) {
+                if (current > a) return
+                console.log(current);
+                numbersrecursive(current + 1, a);
+            }
+
+            numbersrecursive(1, n);
+        }
+
+        // 8. Write a function to calculate factorial of a number.
+        {
+            let num = 5;
+            function fact(a) {
+                if (a === 0 || a === 1) {
+                    return 1;
+                }
+
+                return a * fact(a - 1);
+            }
+            console.log(fact(num));
+        }
+
+        // 9. Write a function to check whether a number is prime.
+        {
+            function isPrime(num) {
+                if (num <= 1) return false; // numbers <= 1 are not prime
+
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        return false; // divisible by i → not prime
+                    }
+                }
+
+                return true; // no divisors found → prime
+            }
+
+            console.log(isPrime(29)); // true
+            console.log(isPrime(15)); // false
+        }
+
+
+        // 10. Write a function to reverse a number.
+        {
+            let num = 12334;
+
+            function revnum(a) {
+                let reverse = "";
+                while (a > 0) {
+                    let digit = a % 10;
+                    reverse = reverse * 10 + digit;
+                    a = parseInt(a / 10);
+                }
+                return reverse;
+            }
+
+            console.log(revnum(num));
+        }
+
+        // 11. Write a function to count digits in a number.
+        {
+            let num = 13344224;
+            function countdigits(a) {
+                let count = 0;
+                while (a > 0) {
+                    let digit = a % 10;
+                    count++;
+                    a = parseInt(a / 10);
+                }
+                return count;
+            }
+
+            console.log(countdigits(num));
+        }
+
+        // 12. Write a function to find the sum of digits of a number.
+        {
+            let num = 13344224;
+            function sumofdigits(a) {
+                let sum = 0;
+                while (a > 0) {
+                    let digit = a % 10;
+                    sum += digit;
+                    a = parseInt(a / 10);
+                }
+                return sum;
+            }
+
+            console.log(sumofdigits(num));
+        }
+
+        // 13. Write a function to check palindrome number.
+        {
+            let num = 1331;
+
+            function isPalindrome(a) {
+                let og = a;
+                let reversed = "";
+                while (a > 0) {
+                    let digit = a % 10;
+                    reversed = reversed * 10 + digit;
+                    a = parseInt(a / 10);
+                }
+                if (reversed === og) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            console.log(isPalindrome(num));
+        }
+
+        // 14. Write a function to print Fibonacci series up to N terms.
+        {
+            let n = 10;
+            //Using Loop
+            function fibo(a) {
+                let no1 = 1, no2 = 2, nextterm;
+                console.log("Fibonacci Series :- ");
+                for (let i = 1; i <= a; i++) {
+                    console.log(no1)
+                    nextterm = no1 + no2;
+                    no1 = no2;
+                    no2 = nextterm;
+                }
+            }
+            fibo(n);
+
+            //Using Recursion
+            function fiboRecursive(num) {
+                if (num === 0) return 0;
+                if (num === 1) return 1;
+                return fiboRecursive(num - 1) + fiboRecursive(num - 2);
+
+            }
+            console.log("Fibonacci Series using Recursion :-");
+            for (let i = 1; i <= n; i++) {
+                console.log(fiboRecursive(i));
+
+            }
+        }
+
+        // 15. Write a function that returns true if a year is a leap year.
+        {
+            year = 2008;
+            function isLeapYear(y) {
+                if (y % 4 === 0) {
+                    return true;
+                }
+
+                return false;
+            }
+
+            console.log(isLeapYear(year));
+        }
+
+        // *****************************Arrow Function in JS********************************
+        // It is introudced in ECMAScript6 (ES6)
+        //For writting function expression in js
+
+        {
+            // Example
+
+            // Normal Function
+            let greet = function () {
+                return "Hello";
+            };
+
+            //Arrow function
+            let greet1 = () => "Hello";
+
+            console.log("Greet :- ", greet());
+            console.log("Greet1 :- ", greet1());
+
+            //Another Example 
+            const square = function (x) {
+                return x * x; //Normal Function
+            };
+
+            const square1 = (x) => x * x;
+
+            console.log("Square :- ", square(5));
+            console.log("Square1 :- ", square1(5));
+
+        }
+
+        {
+            //Types of Arrow Functionss
+            // 1. Implicit Return 
+            let sum = (a, b) => a + b;
+            console.log("Sum :- ", sum(12, 33));
+
+            // 2. Explicit Return
+            let sum1 = (a, b) => {
+                return a + b;
+            };
+            console.log("Sum1 :- ", sum1(32, 21));
+
+        }
+
+        // 1. Write an arrow function to check whether a number is even or odd.
+        {
+            let evenOdd = (num) => {
+                if (num % 2 === 0) return "Even";
+                return "Odd"
+            }
+
+            console.log(evenOdd(6));
+        }
+
+        // 2. Write an arrow function to calculate the factorial of a number.
+        {
+            let fact = (x) => {
+                if (x === 1 || x === 0) return 1;
+                return x * fact(x - 1);
+            }
+            console.log(fact(6));
+        }
+
+        // 3. Write an arrow function to reverse a number.
+        {
+            let reverseNumber = (num) => {
+                let ogNumber = num;
+                let reversenum = "";
+                while (num > 0) {
+                    let digit = num % 10;
+                    reversenum = reversenum * 10 + digit;
+                    num = parseInt(num/10);
+                }
+                return reversenum;
+            }
+
+            console.log(reverseNumber(123345))
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

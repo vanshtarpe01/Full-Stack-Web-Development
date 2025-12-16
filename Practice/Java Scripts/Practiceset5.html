@@ -16,7 +16,7 @@
         // 2. Print numbers from 10 to 1 using a while loop.
         {
             let i = 10;
-            while(i>0){
+            while (i > 0) {
                 console.log(i)
                 i--;
             }
@@ -25,12 +25,12 @@
         // 3. Print all even numbers between 1 and 20.
         {
 
-            for(let i=1; i<21; i++){
-                if(i%2===0){
+            for (let i = 1; i < 21; i++) {
+                if (i % 2 === 0) {
                     console.log(i);
                 }
             }
-            
+
             let i = 1;
 
             // while(i<21){
@@ -40,19 +40,19 @@
             //     i++;
             // }
 
-            do{
-                 if(i%2===0){
+            do {
+                if (i % 2 === 0) {
                     console.log(i);
                 }
                 i++;
-            }while(i<21);
+            } while (i < 21);
         }
 
         // 4. Find the sum of numbers from 1 to N.
         {
             let num = 10;
-            sum =0;
-            for(let i=0; i<=num; i++){
+            sum = 0;
+            for (let i = 0; i <= num; i++) {
                 sum += i;
             }
             console.log(sum);
@@ -61,19 +61,19 @@
         // 5. Print the multiplication table of a given number.
         {
             let num = 6;
-            for(let i =1; i<=10; i++){
-                console.log(`${num} X ${i} = ${num*i}`);
+            for (let i = 1; i <= 10; i++) {
+                console.log(`${num} X ${i} = ${num * i}`);
             }
         }
 
         // 6. Reverse a number using a loop.
         {
-            let num= 2939;
+            let num = 2939;
             reversed = 0;
-            while(num>0){
-                let digit = num%10;
-                reversed = reversed *10+ digit;
-                num = parseInt(num/10);
+            while (num > 0) {
+                let digit = num % 10;
+                reversed = reversed * 10 + digit;
+                num = parseInt(num / 10);
             }
             console.log("Reversed Number :- ", reversed);
         }
@@ -82,7 +82,7 @@
         {
             let num = 6;
             let fact = 1;
-            for(let i =1; i<=num; i++){
+            for (let i = 1; i <= num; i++) {
                 fact *= i;
             }
             console.log(fact);
@@ -94,9 +94,9 @@
             let no1 = 1, no2 = 2, nextterm;
 
             console.log("Fibonacci Series :- ");
-            for(let i = 1; i<= n; i++){
+            for (let i = 1; i <= n; i++) {
                 console.log(no1);
-                nextterm = no1 +no2;
+                nextterm = no1 + no2;
                 no1 = no2;
                 no2 = nextterm;
             }
@@ -106,11 +106,11 @@
         {
             let num = 12;
             isPrime = true;
-            if(num<=1){
+            if (num <= 1) {
                 isPrime = false;
-            }else{
-                for(let i = 2; i<= num/2; i++){
-                    if(num%2===0){
+            } else {
+                for (let i = 2; i <= num / 2; i++) {
+                    if (num % 2 === 0) {
                         isPrime = false;
                         break;
                     }
@@ -121,8 +121,8 @@
 
         // 10. Print all odd numbers between 1 and 50.
         {
-            for(let i =1; i<= 50; i++){
-                if(i%2!==0) console.log(i);
+            for (let i = 1; i <= 50; i++) {
+                if (i % 2 !== 0) console.log(i);
             }
         }
 
@@ -131,14 +131,217 @@
             let num = 12321;
             let og = num;
             let reversed = 0;
-            while(num>0){
+            while (num > 0) {
                 let digit = num % 10;
-                reversed = reversed *10 +digit;
-                num = parseInt(num/10);
+                reversed = reversed * 10 + digit;
+                num = parseInt(num / 10);
             }
             console.log(reversed);
-            if(og == reversed) console.log("Palindrome");
+            if (og == reversed) console.log("Palindrome");
             else console.log("Not Pailndrome");
+        }
+
+        // 12. Count digits of a number
+        {
+            let num = 1234;
+            let count = 0;
+
+            while (num > 0) {
+                num = parseInt(num / 10); // remove last digit
+                count++;                  // increase digit count
+            }
+
+            console.log("Number of digits:", count);
+        }
+
+        // 13. Count how many even digits are in a number.
+        {
+            let num = 123456;
+            let evencount = 0;
+            while (num > 0) {
+                let digit = num % 10; //To get the Digit
+                if (digit % 2 === 0) {
+                    evencount++;
+                }
+                num = parseInt(num / 10); // To Remove last digit
+            }
+            console.log("Even Numbers :- ", evencount);
+        }
+
+        // 14. Check whether a number is an Armstrong number
+        {
+            let num = 153; // Example
+            let ognum = num;
+            let armstrong = 0;
+            let count = 0;
+
+            // First loop: count digits
+            let temp = num; // use a temp variable so num is not lost
+            while (temp > 0) {
+                temp = parseInt(temp / 10);
+                count++;
+            }
+
+            // Second loop: calculate Armstrong sum
+            temp = num; // reset temp to original number
+            while (temp > 0) {
+                let digit = temp % 10;
+                armstrong += digit ** count; // raise to count, not num
+                temp = parseInt(temp / 10);
+            }
+
+            console.log(`Number :- ${ognum}`);
+            console.log(`Count :- ${count}`);
+            console.log(`Armstrong :- ${armstrong}`);
+
+            if (ognum === armstrong) {
+                console.log("Armstrong Number..");
+            } else {
+                console.log("Not an Armstrong Number..");
+            }
+        }
+
+        // 15. Find the largest digit in a number.
+        {
+            let num = 1293;
+            let largest = 0;
+            while (num > 0) {
+                let digit = num % 10;
+                if (digit > largest) {
+                    largest = digit;
+                }
+                num = parseInt(num / 10);
+            }
+            console.log("Number :- 1293");
+            console.log(`Largest Digit :- ${largest}`);
+        }
+
+        // 16. Print this pattern using nested loops
+        {
+            let rows = 4;
+
+            for (let i = 1; i <= rows; i++) {       // outer loop for rows
+                let line = "";
+                for (let j = 1; j <= i; j++) {      // inner loop for numbers
+                    line += j;                      // build string
+                }
+                console.log(line);                  // print each row
+            }
+        }
+
+        // 17. Print this pattern:
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        {
+            let row = 5;
+            for (let i = 1; i <= 5; i++) {
+                let line = "";
+                for (let j = 1; j <= i; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+        }
+
+        // 18. Print numbers from 1 to N, but skip multiples of 3.
+        {
+            let num = 50;
+            for (let i = 1; i <= num; i++) {
+                if (i % 3 === 0) {
+                    continue;
+                } else {
+                    console.log(i);
+                }
+            }
+        }
+
+        // 19. Print numbers from 1 to N and stop when number becomes 7.
+        {
+            let num = 20;
+            for (let i = 1; i <= 20; i++) {
+                if (i === 7) {
+                    break;
+                }
+                console.log(i);
+            }
+        }
+
+        // 20. Count how many numbers between 1 and 100 are divisible by 5.
+        {
+            let num = 100;
+            let count = 0;
+            for (let i = 1; i <= num; i++) {
+                if (i % 5 === 0) {
+                    count++;
+                }
+            }
+            console.log(count);
+        }
+
+        // 21. Find the sum of digits of a given number.
+        {
+            let num = 12345;
+            let sum = 0;
+            while (num > 0) {
+                let digit = num % 10;
+                sum += digit;
+                num = parseInt(num / 10);
+            }
+            console.log(sum);
+        }
+
+        // 22. Find the product of digits of a given number.
+        {
+            let num = 12345;
+            let product = 1;
+            while (num > 0) {
+                let digit = num % 10;
+                product *= digit;
+                num = parseInt(num / 10);
+            }
+            console.log(product);
+        }
+
+        // 23. Find the GCD of two numbers using loops.
+        {
+            let num1 = 430;
+            let num2 = 120;
+            let gcd = 1;
+            for (let i = 1; i <= Math.min(num1, num2); i++) {
+                if (num1 % i === 0 && num2 % i === 0) {
+                    gcd = i;
+                }
+            }
+            console.log("GCD :- ", gcd);
+        }
+
+        // 24. Find the smallest digit in a number.
+        {
+            let num = 5528852;
+            let smallest = 9;
+            while(num>0){
+                let digit = num % 10; 
+                if(digit<smallest){
+                    smallest = digit;
+                }
+                num = parseInt(num /10);
+            }
+            console.log(smallest);
+        }
+
+        // 25. Convert a decimal number to binary using loops.
+        {
+            let num = 25;
+            let binary = "";
+            while(num>0){
+                let remainder = num % 2;
+                binary = remainder + binary;
+                num = parseInt(num / 2);
+            }
+            console.log("Binary :- ",binary); // 1 1 0 0 1
         }
     </script>
 </head>
