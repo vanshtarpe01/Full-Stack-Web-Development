@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in Js</title>
+    <script>
+        // 1. Create an object representing a student with properties: name, rollNo, marks
+        {
+            //Creating an Object
+            let stud = { "name": "Vansh", "rolln": 211, "marks": 530 };
+            console.log(stud);
+
+            //Accessing the Properties of Object
+            console.log(stud.name);
+            console.log(stud["name"]);
+            console.log(stud.rolln);
+            console.log(stud["rolln"]);
+
+            //Adding New Propety
+            stud.grade = 7.95;
+            console.log(stud);
+
+            //Update the value of an property
+            stud.rolln = 56;
+            console.log(stud);
+            
+            delete stud.rolln;        
+            console.log(stud);
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
