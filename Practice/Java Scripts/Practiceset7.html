@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+    <script>
+        {
+            //Arrays are Used to store data in sequential order from index no 0 till n
+            let arr = [1, 2, 3, 4, 5]; //Creating an Array
+            console.log(arr[0]); //Accessing First Element of a Array by using index no 0
+            console.log(arr[1]);
+            console.log(arr[2]);
+            console.log(arr[3]);
+            console.log(arr[4]);
+        }
+
+        // 1. Create an array of 5 numbers and print all elements using a loop.
+        {
+            let newarr = [1, 2, 3, 4, 5];
+            console.log("Printing Array Elements Using Loop:- ")
+            for (let i = 0; i < newarr.length; i++) {
+                console.log(newarr[i]);
+            }
+        }
+
+        // 2. Find the sum of all elements in an array.
+        {
+            let arr = [1, 2, 3, 4, 5];
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            console.log("Sum :- ", sum);
+        }
+
+        // 3. Find the largest element in an array.
+        {
+            let arr = [1, 2, 4, 5, 3];
+            let largest = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (largest < arr[i]) {
+                    largest = arr[i];
+                }
+            }
+            console.log("Largest :- ", largest);
+        }
+
+        // 4. Find the smallest element in an array.
+        {
+            let arr = [8, 3, 5, 2, 6, 9];
+            let smallest = arr[0];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < smallest) {
+                    smallest = arr[i];
+                }
+            }
+
+            console.log("Smallest :- ", smallest);
+        }
+
+        // 5. Count how many even numbers are in an array.
+        {
+            let arr = [1, 3, 44, 56, 35, 25, 267, 782, 22, 48, 90];
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    count++;
+                }
+            }
+            console.log("Count :- ", count);
+        }
+
+        // 6. Reverse an array without using reverse().
+        {
+            let arr = [1, 2, 3, 4, 5];
+            for (let i = arr.length - 1; i >= 0; i--) {
+                console.log(arr[i]);
+            }
+        }
+
+        // 7. Return a new array containing only odd numbers.
+        {
+            let arr = [1, 3, 44, 56, 35, 25, 267, 782, 22, 48, 90];
+            let oddarr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 !== 0) {
+                    oddarr.push(arr[i]);
+                }
+            }
+            for (let i = 0; i < oddarr.length; i++) {
+                console.log(oddarr[i]);
+            }
+        }
+
+        // 8. Check whether an array is sorted in ascending order.
+        {
+
+            function isAscending(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] > arr[i + 1]) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            let arr = [1, 3, 5, 6, 2, 8];
+            let arr1 = [1, 2, 3, 4, 5, 6];
+            console.log(isAscending(arr));
+            console.log(isAscending(arr1));
+        }
+
+        // 9. Create a new array where each element is squared.
+        {
+            let arr = [1, 2, 3, 4, 5, 6];
+            let sqaArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                sqaArr.push(arr[i] * arr[i]);
+            }
+
+            console.log(arr);
+            console.log(sqaArr);
+        }
+
+        // Methods Of Array 1
+        {
+            let arr = ["Apple", "Banana", "Cherry", "DragonFruit", "Grapes"];
+            //Push method used to add the element at the end of the array
+            arr.push("Mango");
+            arr.push("Orange");
+
+            //Pop method is used to remove the last element of an array 
+            popValue = arr.pop();
+            console.log(popValue);
+
+            //Unshift method is used to add element at the begining
+            arr.unshift("Santra");
+
+            //Shift method is used to remove the first element of the array and returns the removed value
+            arr.shift();
+
+            //Length is used to return the lengthof an array
+            console.log("Length Of An Array :- ", arr.length);
+        }
+
+        //Methods of Array 2
+        {
+            let arr = [1, 2, 3, 4, 5, 6, 7];
+            // Map :- Transforms each element & returns a new array
+            let doubled = arr.map(x => x * 2); //Multiply by two
+            console.log(arr);
+            console.log(doubled);
+
+            let square = arr.map(x => x * x);
+            console.log(square);
+            // or
+            let square2 = arr.map(x => {
+                return x * x;
+            });
+            console.log(square2)
+            //or
+            let squareElement = function squareElement(x) {
+                return x * x;
+            };
+
+            let square3 = arr.map(squareElement);
+            console.log(square3);
+
+
+            // filter() :- Return the elements that stastify the condition;
+            let evenNo = arr.filter(x => x % 2 === 0);
+            console.log(evenNo);
+            // or
+            let evenElemnet = function evenElemnet(x) {
+                return x % 2 === 0;
+            };
+            let evenNo1 = arr.filter(evenElemnet);
+            console.log(evenNo1);
+            // or
+            let evenNo2 = arr.filter(x => {
+                return x % 2 === 0;
+            });
+            console.log(evenNo2);
+
+            //reduce() :- Reduces array to a single value
+            let sum = arr.reduce((acc, curr) => acc + curr, 0);
+            console.log(sum);
+
+            let mul = arr.reduce((acc, curr) => acc * curr, 1);
+            console.log(mul);
+
+            let avg = arr.reduce((acc, curr, index, array) => {
+                acc += curr; if (index === array.length - 1) {
+                    return acc / array.length; // final step: divide sum by length 
+                } return acc;
+            }, 0);
+
+            console.log(avg);
+
+            // find() :- Returns first matching element
+            let findRes = arr.find(x => x > 5);
+            console.log(findRes);
+
+            // findIndex() :- Returns index of first matching element
+            let findIndexRes = arr.findIndex(x => x < 5 && x > 2);
+            console.log(findIndexRes);
+
+            // includes() :- Checks if value is exists
+            let checkValue = arr.includes(6);
+            console.log(checkValue);
+
+            // indexOf() :- Return the index of a element
+            let indexOfChecking = arr.indexOf(4);
+            console.log(indexOfChecking);
+        }
+
+        //Array Method 3
+        {
+            let arr = [1, 3, 4, 6, 2, 32, 54, 21, 10, 146];
+            
+            //sort() :- Sorts array (⚠️ default is string sort) !....Modifies original array....!
+            // console.log(arr.sort()); //Sorting is done but number are consider as string
+            // console.log(arr.sort((a, b) => a-b)); //Sorting is done using this
+            // or this
+            let sortArr = arr.sort((a, b)=>{
+                return a-b;
+            });
+            console.log(sortArr);
+            console.log(arr); //Array is Modified
+
+            // reverse() :- Reverse an array !....Modifies original array....!
+            let revArr = arr.reverse();
+            console.log(revArr);
+
+            // slice() :- Only Extracts the part on an array and Does NOT modify original array
+            console.log(arr.slice(0, 4));
+
+            // splice() :- Add / remove / replace elements and Modifies Original Array
+            // Synax :- array.splice(startIndex, deleteCount, item1, item2, ...);
+
+            console.log(arr.splice(1, 2)); // StartIndex and Delete count 
+            arr.splice(1, 2, 55, 33, 88, 212); // StartIndex, Delete count and replace 
+            console.log(arr);
+            arr.splice(10, 0, -1, -5,-3, -9); // StartIndex and Adding Values
+            console.log(arr);
+
+            // concat() :- Merge two arrays
+            let names = ["Suarj", "Shreaysh", "Somesh", "Vansh"];
+            let newNamesArr = names.concat(["Soham", "Tarang", "Lavanya", "Vishal"]);
+            console.log(newNamesArr);
+
+
+            // every() :- Checks if all elements satisfy condition
+            console.log(arr.every(x => x > 0));
+
+            // some() :- Checks if any element satisfies condition
+            console.log(arr.some(x => x > 0));
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
