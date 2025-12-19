@@ -25,13 +25,476 @@
             //Update the value of an property
             stud.rolln = 56;
             console.log(stud);
-            
-            delete stud.rolln;        
+
+            //Delete Property
+            delete stud.rolln;
             console.log(stud);
 
         }
 
+        // 6. Given an object representing a product, check whether the property price exists.
+        {
+            let productObj = { "product_name": "Mobile", "category": "Electronics", "product_id": "EE101", "price": 12000, "availability": "Yes" };
+            console.log(productObj);
+            if (productObj.price !== undefined) {
+                console.log("Exists karta hai bhai..");
+            } else {
+                console.log("Does not exists..");
+            }
 
+            // 2nd solution
+            if ("price" in productObj) {
+                console.log("Exists karta hai bhai..");
+            } else {
+                console.log("Does not exists..");
+            }
+
+            if (productObj.hasOwnProperty("price")) {
+                console.log("Exists karta hai bhai..");
+            } else {
+                console.log("Does not exists..");
+            }
+
+            // 7. Count the number of properties in an object.
+            let count = Object.keys(productObj).length;
+            console.log(count);
+
+            let keys = Object.keys(productObj);
+            // // 8. Iterate over an object and print all keys and values.
+            for (let i = 0; i < keys.length; i++) {
+                console.log(`${keys[i]} : ${productObj[keys[i]]}`);
+            }
+
+            // 9. Create an object and convert it into an array of keys.
+            {
+                let productObj = { "product_name": "Mobile", "category": "Electronics", "product_id": "EE101", "price": 12000, "availability": "Yes" };
+                let arrKeys = Object.keys(productObj);
+                console.log(arrKeys);
+                console.log(arrKeys[2]);
+
+                let arrValues = Object.values(productObj);
+                console.log(arrValues);
+
+                console.log("\n\nIterate on the Object and printing keys and values \n\n");
+                for (let i = 0; i < arrValues.length; i++) {
+                    console.log(`${arrKeys[i]} : ${arrValues[i]}`);
+                }
+
+            }
+
+            // 10. Create a function that takes an object and returns the sum of all numeric values.
+            {
+                let product = { product_name: "Mobile", price: 12000, stock: 50, availability: "Yes" };
+                let objectValue = Object.values(product);
+                let sum = 0;
+                for (let i = 0; i < objectValue.length; i++) {
+                    if (typeof objectValue[i] === "number") { // check if value is numeric 
+                        sum += objectValue[i];
+                    }
+                }
+                console.log(sum);
+            }
+
+            // 11. Given an array of objects { name, age }, find all users older than 18.
+
+            {
+                let users = [
+                    { name: "Vansh", age: 17 },
+                    { name: "Somesh", age: 20 },
+                    { name: "Shreaysh", age: 25 },
+                    { name: "Suarj", age: 16 }
+                ];
+
+                let users18 = users.filter((x) => {
+                    return x.age >= 18;
+                });
+
+            }
+
+            // 12. Given an array of objects { name, salary }, calculate the total salary.
+            {
+                let employees = [
+                    { name: "Vansh", salary: 10000 },
+                    { name: "Somesh", salary: 23300 },
+                    { name: "Suraj", salary: 23410 },
+                    { name: "Shreyash", salary: 32000 }
+                ];
+                let totalSal = employees.reduce((acc, curr) => {
+                    return acc += curr.salary;
+                }, 0);
+                console.log(totalSal);
+            }
+        }
+
+        // 13. Given an array of objects { id, isActive }, check whether any user is inactive.
+        {
+            let checkInactive = [
+                { id: 1, active: true },
+                { id: 2, active: true },
+                { id: 3, active: false },
+                { id: 4, active: true },
+            ];
+
+            let inactive = checkInactive.some((x) => x.active === false);
+            console.log(inactive);
+        }
+
+        // 15. Given an array of objects { category, price }, group products by category.
+        {
+            let products = [
+                { category: "Electronics", price: 12000 },
+                { category: "Electronics", price: 8000 },
+                { category: "Clothing", price: 2000 },
+                { category: "Clothing", price: 3500 },
+                { category: "Grocery", price: 500 }
+            ];
+
+            let grouped = products.reduce((acc, curr) => {
+                // if category doesn't exist yet, create it
+                if (!acc[curr.category]) {
+                    acc[curr.category] = [];
+                }
+                acc[curr.category].push(curr.price);
+                return acc;
+            }, {});
+
+            console.log(grouped);
+
+        }
+
+        //*******************Types Of Loop********************
+        {
+            // Loops:- for, while, do-while, for..of, for..in, for..each and Loop Like :- map(), filter() and reduce()
+
+            // for loop :- Used when you know the count / index is important
+            for (let i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+
+            // while loop :- Used when condition decides stop
+            let i = 1;
+            while (i <= 5) {
+                console.log(i);
+                i++;
+            }
+
+            //do...while loop :- Input validation and Menu systems (CLI tools)
+            let j = 1;
+            do {
+                console.log("Hello");
+                j++;
+            } while (j <= 4);
+
+            // for...of :- MOST USED for arrays & strings
+            let arr = [10, 20, 30];
+            for (let value of arr) {
+                console.log(value);
+            }
+
+            // for...in :- Mostly for objects only, used to iterate over object keys
+            let obj = { a: 1, b: 2 };
+            for (let key in obj) {
+                console.log(key, obj[key]);
+            }
+
+            // for..each :- Executes a function for each array element
+            arr.forEach(num => console.log(num * 2));
+
+            // map() :- UI lists, API data transformation and React rendering
+            let doubled = arr.map(n => n * 2);
+
+            // filter() :- Search, Permissions and Validation
+            let evens = arr.filter(n => n % 2 === 0);
+
+            // reduce() :- Totals, Grouping, Analytics and Cart totals
+            let sum = arr.reduce((a, b) => a + b, 0);
+        }
+
+        //forEach()
+        // 1. Print each element of an array with its index
+        {
+            let arr = [1, 2, 3, 4, 5];
+            arr.forEach(ele => {
+                console.log(ele);
+            });
+        }
+
+        // 2. Calculate the sum of all numbers in an array using forEach.
+        {
+            let arr = [1, 2, 3, 4, 5];
+            let sum = 0;
+            arr.forEach(ele => {
+                sum += ele;
+            });
+            console.log(sum);
+        }
+
+        // 3. Convert all strings in an array to uppercase using forEach.
+        {
+            let names = ["Vansh", "Somesh", "Suraj", "Soham"];
+            let upperNames = [];
+            names.forEach(ele => {
+                upperNames.push(ele.toUpperCase());
+            });
+            console.log(upperNames);
+        }
+
+        // 4. Count how many even numbers are present in an array.
+        {
+            let arr = [12, 33, 24, 53, 453, 455, 678, 997, 66, 56, 68];
+            let count = 0;
+            arr.forEach(ele => {
+                if (ele % 2 === 0) {
+                    count++;
+                }
+            });
+
+            console.log(count);
+        }
+
+
+        // 5. Given an array of prices, add 18% GST to each price and print the result.
+        {
+            let price = [100, 200, 300, 400, 500];
+            let priceGst = [];
+            price.forEach(ele => {
+                priceGst.push(ele + ele * 0.18);
+            });
+            console.log(priceGst);
+        }
+
+        // map()
+        // 1. Create a new array where each number is squared.
+        {
+            let arr = [1, 2, 3, 4, 5, 6];
+            let squared = arr.map((x) => {
+                return x * x;
+            });
+            console.log(squared);
+        }
+
+        // 2. Convert an array of names to an array of name lengths.
+        {
+            let names = ["Vansh", "Shreaysh", "Somesh", "Suraj", "Soham", "Lavanya", "Tarang"];
+            let totalLength = 0;
+            let nameLength = names.map((x) => {
+                totalLength += x.length;
+                return x.length;
+            });
+            console.log("Original Array :- ", names);
+            console.log("Total Length :- ", totalLength);
+            console.log("Length Array :- ", nameLength);
+        }
+
+        // 3. From an array of objects {name, age}, return an array of only names.
+        {
+            let detailsObj = [
+                { name: "Vansh", age: 19 },
+                { name: "Ram", age: 12 },
+                { name: "Raj", age: 16 },
+                { name: "Som", age: 21 }
+            ]
+
+            let names = detailsObj.map((x) => {
+                return x.name;
+            });
+            console.log(names);
+        }
+
+        // 4. Convert prices from rupees to dollars (assume 1$ = 83₹).
+        {
+            let arrRupees = [830, 1660, 2490, 4150, 8300];
+            let arrDollar = arrRupees.map((price) => price / 83);
+            console.log(arrDollar);
+        }
+
+        // 5. Add "Mr." before each name in an array.
+        {
+            let names = ["Vansh", "Shreaysh", "Somesh", "Suraj", "Soham", "Lavanya", "Tarang"];
+            let respectedName = names.map((x) => "Mr. " + x);
+            console.log(respectedName);
+        }
+
+
+        // filter()
+        // 1. Filter out numbers greater than 50.
+        {
+            let arr = [25, 2252, 222, 82, 6, 253, 42, 32, 212, 31, 85];
+            let greaterFifty = arr.filter((x) => x > 50);
+            console.log(greaterFifty);
+        }
+
+        // 2. Get all even numbers from an array.
+        {
+            let arr = [12, 33, 24, 53, 453, 455, 678, 997, 66, 56, 68];
+            let evenEle = arr.filter((x) => x % 2 === 0);
+            console.log(evenEle);
+        }
+
+        // 3. From a list of users, return only active users.
+        {
+            let users = [
+                { id: 1, active: true },
+                { id: 2, active: true },
+                { id: 3, active: false },
+                { id: 4, active: true },
+            ];
+            let checkActiveUsers = users.filter((au) => au.active === true);
+            console.log(checkActiveUsers)
+        }
+
+        // 4. Filter strings that start with the letter "A".
+        {
+            let rawStr = ["Apple", "Vansh", "Amisha", "Shreaysh", "Suraj", "Atharv", "Somesh"];
+            let startWithA = rawStr.filter((a) => a.startsWith("A"));
+            console.log(startWithA);
+        }
+
+        // 5. From an array of products, return products with price < 1000.
+        {
+            let products = [
+                { name: "Pen", price: 50 },
+                { name: "Book", price: 200 },
+                { name: "Headphones", price: 1500 },
+                { name: "Keyboard", price: 900 },
+                { name: "Laptop", price: 55000 }
+            ];
+
+            let cheapestProduct = products.filter((p) => p.price < 1000);
+            console.log(cheapestProduct);
+        }
+
+
+        // reduce()
+        // 1. Find the sum of all numbers in an array.
+        {
+            let arr = [1, 2, 3, 5, 6, 4];
+            let sum = arr.reduce((acc, curr) => acc += curr, 0);
+            console.log(sum);
+        }
+
+
+        // 2. Find the maximum number in an array.
+        {
+            let arr = [10, 25, 3, 99, 56];
+            let maxNum = arr.reduce((max, curr) => curr > max ? curr : max);
+            console.log("Maximum number:", maxNum);
+        }
+
+        // 3. Calculate the total price of items in a shopping cart.
+        {
+            let cart = [
+                { item: "Pen", price: 20, quantity: 2 },
+                { item: "Notebook", price: 50, quantity: 3 },
+                { item: "Bag", price: 500, quantity: 1 },
+                { item: "Bottle", price: 150, quantity: 2 }
+            ];
+
+            let total = cart.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
+
+            console.log("Total Price:", total);
+
+        }
+        // for...of
+        // 1. Print each character of a string.
+        {
+            let nameStr = "VanshTarpe";
+            for (let ch of nameStr) {
+                console.log(ch);
+            }
+        }
+
+        // 2. Find the sum of all numbers using for...of.
+        {
+            let arr = [1, 3, 2, 4, 3, 5, 6];
+            let sum = 0;
+            for (let a of arr) {
+                sum += a;
+            }
+            console.log(sum);
+        }
+
+        // 3.Find the first number greater than 100 (use break).
+        {
+            let arr = [12, 33, 24, 53, 453, 455, 678, 997, 66, 56, 68];
+            for (let a of arr) {
+                if (a > 100) {
+                    break;
+                }
+                console.log(a);
+            }
+        }
+
+        // 4. Count vowels in a string.
+        {
+            let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+            let str = "JAYHIND";
+            let count = 0;
+            for (let ch of str) {
+                if (vowels.includes(ch)) {
+                    count++;
+                }
+            }
+            console.log(count);
+        }
+
+        // 5. Reverse an array using for...of.
+        {
+            let arr = [1, 2, 3, 4, 5];
+            let reversed = [];
+
+            for (let a of arr) {
+                reversed.unshift(a); // add each element to the front
+            }
+
+            console.log("Original:", arr);
+            console.log("Reversed:", reversed);
+        }
+
+
+        // for...in
+        {
+            let obj = {
+                a: 10,
+                b: 20,
+                c: "Hello",
+                d: 40
+            };
+
+            // 1.Print all keys of an object.
+            for (let key in obj) {
+                console.log(key);
+            }
+
+            // 2. Print all values of an object.
+            for (let value in obj) {
+                console.log(obj[value]);
+            }
+
+            // 3. Count how many properties an object has.
+            let count = 0;
+            for (let val in obj) {
+                count++;
+            }
+            console.log(count);
+
+            // 4. Find the sum of all numeric values in an object.
+            let sum = 0;
+            for (let val in obj) {
+                if (typeof obj[val] === "number") {
+                    sum += obj[val];
+                }
+            }
+            console.log(sum);
+
+            // 5. Convert object keys into an array.
+            let keysArray = [];
+            for (let key in obj) {
+                keysArray.push(key);
+            }
+            console.log(keysArray);
+
+        }
     </script>
 </head>
 
