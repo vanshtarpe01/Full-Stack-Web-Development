@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Vansh",
+        "roll" : 22, 
+        "city" : "Amravati",
+        "age" : 19
+    },
+    {
+        "name" : "Suraj",
+        "roll" : 28, 
+        "city" : "Chikli",
+        "age" : 20
+    },
+    {
+        "name" : "Shreyash",
+        "roll" : 32, 
+        "city" : "Amravati",
+        "age" : 21
+    },
+    {
+        "name" : "Somesh",
+        "roll" : 44, 
+        "city" : "Akola",
+        "age" : 18
+    },
+    {
+        "name" : "Soham",
+        "roll" : 54, 
+        "city" : "Amravati",
+        "age" : 19
+    }
+]
