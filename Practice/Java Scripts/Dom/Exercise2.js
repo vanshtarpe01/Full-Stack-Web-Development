@@ -76,3 +76,52 @@ for(let i=0; i< texts.length; i++){
     temp.innerText = texts[i];
     body.append(temp);
 }
+
+let table = document.createElement("table");
+table.border = "1"; // optional, just to see the borders
+
+let columns = ["Sr.NO", "Name", "Roll No", "Age"];
+let rows = [
+    [1, "Vansh Tarpe", "MLU25S211", "19"],
+    [2, "Soham Vilaytkar", "MLU25S229", "20"],
+    [3, "Lavanya Gaikwad", "MLU25S213", "18"]
+];
+
+// Create header row
+let headerRow = document.createElement("tr");
+columns.forEach(col => {
+    let th = document.createElement("th");
+    th.innerText = col;
+    headerRow.append(th);
+});
+table.append(headerRow);
+
+// Create data rows
+rows.forEach(rowData => {
+    let tr = document.createElement("tr");
+    rowData.forEach(cellData => {
+        let td = document.createElement("td");
+        td.innerText = cellData;
+        tr.append(td);
+    });
+    table.append(tr);
+});
+
+// Append table to body
+document.body.append(table);
+
+// Create a card layout using div, h3, and p.
+let card = document.createElement("div");
+
+let h3c = document.createElement("h3");
+h3c.innerText = "Hello I am Card 1";
+let cardp = document.createElement("p");
+cardp.innerText = "Hello i am Card 1 and I dont know why i created i mean for what reason...?";
+
+card.classList.add("card");
+h3c.classList.add("card-h3");
+cardp.classList.add("card-p");
+card.append(h3c);
+card.append(cardp);
+
+document.body.append(card);
