@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise No 2</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container {
+            background-color: yellow;
+            width: 250px;
+            height: 250px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            bottom: 125%;
+            /* position above */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <div class="tooltip">
+        Hover over me
+        <span class="tooltiptext">This is a custom tooltip!</span>
+    </div>
+
+    <style>
+    </style>
+
+
+    <script src="Exercise2.js"></script>
+</body>
+
+</html>
