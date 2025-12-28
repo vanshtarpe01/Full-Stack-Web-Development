@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise No 1</title>
+    <style>
+        input {
+            /* border: none; */
+            /* Removes the default border */
+            /* background-color: transparent; */
+            /* Makes the background transparent if needed */
+        }
+
+        h2 {
+            text-transform: capitalize
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="user-name" id="user-name" placeholder="Enter your username ">
+        <br>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Enter your password ">
+        <br>
+        <p id="strength-message"></p>
+        <br>
+        <br>
+        <h2 id="selected-city">City Selected</h2>
+        <select name="city" id="select-city">
+            <option disabled selected>Select Your City</option>
+            <option value="amravati">Amravati</option>
+            <option value="pune">Pune</option>
+            <option value="nagpur">Nagpur</option>
+            <option value="akola">Akola</option>
+            <option value="parbhani">Parbhani</option>
+            <option value="akot">Akot</option>
+        </select>
+        <input type="submit" id="btn-submit">
+
+        <br>
+        <br>
+        <label><input type="checkbox" name="skills" value="JS"> JavaScript</label>
+        <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+        <label><input type="checkbox" name="skills" value="CSS">CSS</label>
+
+        <label> <input type="checkbox" id="fill-username" /> Use default username </label> 
+        <br> 
+        <input type="text" id="username1" placeholder="Enter username">
+    </form>
+    <script src="Exercise1.js"></script>
+</body>
+
+</html>

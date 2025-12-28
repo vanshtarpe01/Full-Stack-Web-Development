@@ -9,8 +9,9 @@ btn.addEventListener("click", ()=>{
 
 // Validate input field on submit.
 let userName = document.querySelector("#username");
+let form = document.querySelector("form");
 let btnSubmit = document.querySelector("#btn-submit");
-btnSubmit.addEventListener("click", ()=>{
+form.addEventListener("submit", ()=>{
     if(userName.value.trim() === ""){
         alert("Please Enter Username");
     }else if(userName.value.trim().length < 3){

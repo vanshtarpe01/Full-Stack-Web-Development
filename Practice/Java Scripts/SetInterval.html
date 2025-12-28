@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="colorBox">Color Box</div>
+
+    <script>
+        // Print "Hello" every 1 second using setInterval. 
+        // setInterval(() => {
+        //     console.log("Hello");
+        // }, 1000);
+
+        // Change background color of a div every 2 seconds.
+        const box = document.getElementById("colorBox"); // Array of colors to cycle through 
+        const colors = ["red", "green", "blue", "purple", "orange", "teal"]; 
+        let index = 0;
+        setInterval(() => {
+            box.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length; // loop back to start 
+        }, 2000); // every 2 seconds
+
+        // Display numbers from 1 to 10 every second, then stop.
+        // let count = 10;
+        // setInterval(()=> {
+        //     if(count >= 1) console.log(count--);
+        // }, 1000);
+
+        let newcount = 1;
+        setInterval(()=>{
+            if(newcount >= 10) return
+            console.log(newcount++);
+        }, 1000);
+    </script>
+</body>
+
+</html>

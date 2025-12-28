@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout</title>
+</head>
+<body>
+    <h1>I am Heading</h1>
+    <p>I am paragraph that is change after 5 seconds</p>
+    <div class="box" style="width: 200px; height: 200px; background-color: blueviolet; border-radius: 8px;">
+    </div>
+
+    <script>
+        // Display a message after 3 seconds using setTimeout.
+        setTimeout(function(){
+            console.log("Hello My Dear..");
+        }, 3000);
+
+        // Change the text of a paragraph after 5 seconds
+        let para = document.querySelector("p");
+        setTimeout(()=>{
+            para.innerText = "I am the same paragraph that is changed after 5 sec";
+            para.style.color = "red";
+        }, 5000);
+
+        // Show an alert 2 seconds after page load.
+        window.onload = function(){
+            setTimeout(()=>{
+                alert("I am alert")
+            }, 2000);
+        };
+
+        // Change background color of a div after a delay.
+        let box = document.querySelector(".box");
+        setTimeout(()=> box.style.backgroundColor = "yellow", 4000);
+
+        // Print numbers from 1 to 5, each number after 1 second delay (use multiple setTimeout).
+        setTimeout(()=> console.log("1"), 1000);
+        setTimeout(()=> console.log("2"), 2000);
+        setTimeout(()=> console.log("3"), 3000);
+        setTimeout(()=> console.log("4"), 4000);
+        setTimeout(()=> console.log("5"), 5000);
+
+        // Store a setTimeout in a variable and cancel it using clearTimeout before execution.
+        let heading = document.querySelector("h1");
+        let headingST = setTimeout(() => heading.style.backgroundColor = "yellowgreen", 6500);
+        clearTimeout(headingST);
+    </script>
+</body>
+</html>
