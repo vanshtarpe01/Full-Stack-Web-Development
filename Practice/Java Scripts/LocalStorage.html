@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <style>
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        #toggleBtn {
+            margin: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Local Storage</h1>
+    <button id="toggleBtn">Toggle Theme</button>
+    <h1>Hello Vansh!</h1>
+
+    <script>
+        // Store a username in localStorage and retrieve it.
+        localStorage.setItem("username", "VanshTarpe01");
+        let username = localStorage.getItem("username");
+        console.log(username);
+
+        // Update an existing value in localStorage.
+        localStorage.setItem("username", "VanshTarpe15"); //setItem() methods used for both create and uodate
+        let newusername = localStorage.getItem("username");
+        console.log(newusername);
+
+        // Remove a specific key from localStorage.
+        localStorage.setItem("age", 18);
+        localStorage.removeItem("age");
+
+        // Clear all data from localStorage.
+        localStorage.clear();
+
+        // Check if a key exists in localStorage.
+        localStorage.setItem("name", "Vansh");
+        localStorage.setItem("age", 19);
+
+        //method 1
+        let exists = localStorage.hasOwnProperty("age");
+        console.log(exists);
+
+        //method 2
+        let exists1 = "name" in localStorage;
+        console.log(exists1);
+
+        //method 3
+        let exists2 = localStorage.getItem("roll") !== "";
+        console.log(exists2);
+
+        // Store an object in localStorage.
+        // Retrieve an object from localStorage and use its properties.
+        // Count how many keys are present in localStorage.
+
+
+        const body = document.body;
+        const toggleBtn = document.getElementById("toggleBtn"); // ✅ Apply stored theme on page load 
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.className = savedTheme;
+        } else {
+            body.className = "light"; // default theme 
+        } // ✅ Toggle theme and save preference 
+        toggleBtn.addEventListener("click", () => {
+            if (body.className === "light") {
+                body.className = "dark";
+                localStorage.setItem("theme", "dark");
+            } else {
+                body.className = "light";
+                localStorage.setItem("theme", "light");
+            }
+        });
+
+        
+    </script>
+</body>
+
+</html>
