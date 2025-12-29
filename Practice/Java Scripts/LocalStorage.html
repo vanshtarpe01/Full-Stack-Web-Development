@@ -65,9 +65,22 @@
         console.log(exists2);
 
         // Store an object in localStorage.
-        // Retrieve an object from localStorage and use its properties.
-        // Count how many keys are present in localStorage.
+        let myObj = {
+            name : "Vansh",
+            age : 19,
+            qualification : "Diploma"
+        };
 
+        localStorage.setItem("myDets", JSON.stringify(myObj));
+        // Retrieve an object from localStorage and use its properties.
+        let newObj = JSON.parse(localStorage.getItem("myDets"));
+        console.log(newObj["name"]);
+        console.log(newObj["age"]);
+        console.log(newObj["qualification"]);
+
+        // Count how many keys are present in localStorage.
+        console.log(localStorage.length);
+       
 
         const body = document.body;
         const toggleBtn = document.getElementById("toggleBtn"); // ✅ Apply stored theme on page load 
@@ -86,7 +99,6 @@
                 localStorage.setItem("theme", "light");
             }
         });
-
         
     </script>
 </body>
