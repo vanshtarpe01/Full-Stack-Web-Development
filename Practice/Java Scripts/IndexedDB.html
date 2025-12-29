@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexed DataBase</title>
+</head>
+
+<body>
+
+    <script>
+
+        // ------------------ IndexedDB Helper ------------------
+
+        // Open (or create) the database
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                let request = indexedDB.open("UserDB", 1);
+
+                // Runs only when DB is created or upgraded
+                request.onupgradeneeded = function (event) {
+                    let db = event.target.result;
+                    let store = db.createObjectStore("users", { keyPath: "id" });
+                    store.createIndex("username", "username", { unique: true });
+                    console.log("Object store created!");
+                };
+
+                request.onsuccess = function (event) {
+                    let db = event.target.result;
+                    console.log("Database opened successfully:", db.name);
+                    resolve(db); // return db connection
+                };
+
+                request.onerror = function (event) {
+                    reject("Database error: " + event.target.error);
+                };
+            });
+        }
+
+        // ------------------ CRUD Functions ------------------
+
+        // Add Data
+        async function addUser(id, username) {
+            let db = await openDB();
+            let transaction = db.transaction("users", "readwrite");
+            let store = transaction.objectStore("users");
+
+            let user = { id: id, username: username };
+            store.add(user);
+
+            transaction.oncomplete = () => console.log("User added:", user);
+            transaction.onerror = () => console.error("Error adding user");
+        }
+
+        // Read Data
+        async function getUser(id) {
+            let db = await openDB();
+            let transaction = db.transaction("users", "readonly");
+            let store = transaction.objectStore("users");
+
+            let query = store.get(id);
+
+            query.onsuccess = () => console.log("User found:", query.result);
+            query.onerror = () => console.error("Error fetching user");
+        }
+
+        // Update Data
+        async function updateUser(id, newUsername) {
+            let db = await openDB();
+            let transaction = db.transaction("users", "readwrite");
+            let store = transaction.objectStore("users");
+
+            let updatedUser = { id: id, username: newUsername };
+            store.put(updatedUser);
+
+            transaction.oncomplete = () => console.log("User updated:", updatedUser);
+            transaction.onerror = () => console.error("Error updating user");
+        }
+
+        // Delete Data
+        async function deleteUser(id) {
+            let db = await openDB();
+            let transaction = db.transaction("users", "readwrite");
+            let store = transaction.objectStore("users");
+
+            store.delete(id);
+
+            transaction.oncomplete = () => console.log("User deleted with id:", id);
+            transaction.onerror = () => console.error("Error deleting user");
+        }
+
+        // ------------------ Example Usage ------------------
+        addUser(1, "Vansh_15");
+        getUser(1);
+        updateUser(1, "Vansh_Updated");
+        deleteUser(1);
+        getUser(1);
+        
+    </script>
+</body>
+
+</html>

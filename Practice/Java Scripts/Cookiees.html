@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookiees In JS</title>
     <style>
-        
+
     </style>
 </head>
+
 <body>
-    
+
     <script>
+        // Create a cookie with a username.
         document.cookie = "name= Vansh Tarpe";
         document.cookie = "username=John Doe";
+        console.log(document.cookie);
+
+        // Create a cookie with an expiry date
+        document.cookie = "username=Vansh_15; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT";
+        // username = Vansh_15 → The key / value pair stored in the cookie.
+        // path =/ → Makes the cookie accessible across the entire site.
+        // expires = Fri, 31 Dec 2025 23: 59: 59 GMT → Sets the exact expiry date and time(in GMT format).After this date, the browser will automatically delete the cookie.
+
+        // Delete a cookie.
+        document.cookie = "username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        // expires=Thu, 01 Jan 1970 00:00:00 GMT → A date in the past, which tells the browser to remove the cookie immediately.
+
+        // Compare cookie storage size with localStorage.
+        /*
+        Cookies can only store about 4 KB of data per cookie, while localStorage allows up to 5–10 MB depending on the browser. This makes localStorage far more suitable for storing larger client-side data, while cookies are mainly used for small session identifiers and authentication tokens*/
+
     </script>
 </body>
+
 </html>
