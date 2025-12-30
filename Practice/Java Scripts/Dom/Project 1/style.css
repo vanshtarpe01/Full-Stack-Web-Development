@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'GiloryExtraBold', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    background-color: #111; /* dark background for contrast */
+}
+
+/* Container to keep bulb + button centered */
+.container {
+    text-align: center;
+}
+
+/* Bulb styles */
+#bulb {
+    width: 120px;
+    height: 120px;
+    background-color: gray; /* default OFF */
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #000 inset; /* inner shadow for depth */
+    transition: all 0.4s ease; /* smooth effect */
+}
+
+/* Light ON effect */
+#bulb.on {
+    background-color: yellow;
+    box-shadow: 0 0 40px 20px rgba(255, 255, 0, 0.6),
+                0 0 80px 40px rgba(255, 255, 0, 0.4);
+}
+
+/* Button styles */
+#btn-light-on-off {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #444, #222);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#btn-light-on-off:hover {
+    background: linear-gradient(135deg, #666, #333);
+    transform: scale(1.05);
+}
