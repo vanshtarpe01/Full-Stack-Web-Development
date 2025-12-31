@@ -1,0 +1,78 @@
+/* General Page Styling */
+body {
+    background-color: #f4f1e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    margin: 0;
+    font-family: sans-serif; /* Tailwind default */
+}
+
+/* Card Container */
+.container {
+    background-color: #fff8e7;
+    border: 1px solid #c9bfa3;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #5a4e3c;
+    margin-bottom: 1rem;
+}
+
+/* Progress Bar Track */
+.progress-track {
+    width: 100%;
+    background-color: #e2d5c1;
+    height: 1rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border: 1px solid #c2b59b;
+}
+
+/* Moving Progress Bar */
+#progress-bar {
+    background-color: #96b38a;
+    height: 100%;
+    width: 0;
+    transition: all 100ms linear;
+}
+
+/* Labels */
+#percentage {
+    color: #5a4e3c;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#status-label {
+    color: #7d715e;
+    margin-bottom: 1rem;
+}
+
+/* Download Button */
+#download-btn {
+    background-color: #b08d57;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms ease;
+}
+
+#download-btn:hover {
+    background-color: #a27c43;
+}
