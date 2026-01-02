@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical scoping And Closures</title>
+</head>
+
+<body>
+    <script>
+
+        // Lexical scoping
+        function init() {
+            var name = "Mozilla"; // name is a local variable created by init
+            function displayName() {
+                // displayName() is the inner function, that forms a closure
+                console.log(name); // use variable declared in the parent function
+            }
+            displayName();
+        }
+        init();
+
+        function makeFunc() {
+            const name = "Mozilla";
+            function displayName() {
+                console.log(name);
+            }
+            return displayName;
+        }
+
+        const myFunc = makeFunc();
+        myFunc();
+
+        function makeAdder(x) {
+            return function (y) {
+                return x + y;
+            };
+        }
+
+        const add5 = makeAdder(5);
+        const add10 = makeAdder(10);
+
+        console.log(add5(2)); // 7
+        console.log(add10(2)); // 12
+
+        // Another Example
+        function CountForMe(){
+            let count = 0;
+            return function(){
+                count++;
+                console.log(count);
+            }
+        }
+
+        let fun1 = CountForMe();
+        fun1();
+        fun1();
+        fun1();
+        fun1();
+        let fun2 = CountForMe();
+        fun2();
+        fun2();
+        fun2();
+        fun2();
+        fun2();
+        fun2();
+
+
+        function clickLimiter(){
+            let click =0;
+            return function(){
+                if(click < 5){
+                    click++;
+                    console.log(`Clicked : ${click} times`);
+                }
+                else{
+                    console.error("LIMIT EXCEEDED TRY AGAIN AFTER SOME TIME");
+                }
+            }
+        }
+
+        let clickFun1 = clickLimiter();
+        clickFun1();
+        clickFun1();
+        clickFun1();
+        clickFun1();
+        clickFun1();
+        clickFun1();
+    </script>
+</body>
+
+</html>
