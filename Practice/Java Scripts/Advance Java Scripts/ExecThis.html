@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword in JS</title>
+</head>
+
+<body>
+    <h1>Helllo</h1>
+    <script>
+        // Value of the this keyword in the global scope
+        console.log(this); // It returns the Window object
+
+        // Value of the this keyword inside a function
+        function checkingThisVal() {
+            console.log(this);  // It returns the Window object
+        }
+        checkingThisVal();
+
+        // Value of the this keyword inside a method
+        let obj = {
+            name: "Vansh",
+            age: 19,
+            sayname: function () {
+                console.log(this);  // It returns the object itself
+            }
+        };
+        obj.sayname();
+
+        // Value of the this keyword inside an event listener
+        document.querySelector("h1").addEventListener("click", function () {
+            console.log(this); // It returns the selected element
+            this.style.color = "blue";
+        });
+
+        // Value of the this keyword inside a class
+        class Demo {
+            constructor() {
+                console.log(this); // It creates a blank object
+                this.a = 12;
+            }
+        }
+
+        let val = new Demo();
+        console.log(val);
+
+        // Method with ES5 function returns the object itself
+        // Method with ES6 arrow function returns Window, because arrow functions lose their own this value
+        let newObj = {
+            name: "Alis",
+            newSayName: () => {
+                console.log(this); // Returns the Window object
+            }
+        };
+        newObj.newSayName();
+
+        // ES5 function inside an ES5 method returns Window again
+        let newObj1 = {
+            company: "Google",
+            companyName: function () {
+                function abcd() {
+                    console.log(this); // Returns the Window object
+                }
+                abcd();
+            }
+        };
+        newObj1.companyName();
+
+        // ES6 arrow function inside an ES5 method returns the object again
+        let employee = {
+            id: "emp_1",
+            empDets: function () {
+                let a = () => {
+                    console.log(this); // Returns the object
+                }
+                a();
+            }
+        };
+
+        employee.empDets();
+
+        // Call, Apply, and Bind
+        // Call
+        // When we call a function, we can set the value of this at that time
+
+        let devObj = {
+            developer: "Vansh",
+            age: 19
+        };
+
+        function fun1() {
+            console.log(this); // It returns the Window object when called normally
+            console.log(this.developer);
+            console.log(this.age);
+        }
+        fun1.call(devObj); // Using call() sets this to the passed object
+
+
+        // Call with parameters
+        // call() immediately invokes the function
+        // The first argument sets the value of this
+        // Remaining arguments are passed individually
+        function fun2(a, b, c) {
+            console.log(this); // Refers to devObj
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        fun2.call(devObj, 1, 2, 3);
+
+        // Apply
+        // apply() is similar to call()
+        // The first argument sets the value of this
+        // The second argument must be an array of parameters
+        // It is useful when arguments are already available as an array
+        fun2.apply(devObj, [4, 5, 6]); // Works the same as call, only argument passing is different
+
+        // Bind
+        // bind() does NOT execute the function immediately
+        // It returns a new function with this permanently bound to the given object
+        // Arguments can also be preset
+        // The returned function can be called later
+        let demoFun = fun2.bind(devObj, 8, 9, 10); // Creates a new function with bound this and arguments
+        demoFun();
+
+    </script>
+
+</body>
+
+</html>
