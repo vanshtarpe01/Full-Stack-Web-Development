@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+
+<script>
+    // =========================
+    // Synchronous code
+    // =========================
+    console.log("Hey 1");
+    console.log("Hey 2");
+    console.log("Hey 3");
+
+    // Asynchronous code with random delay (0–9 seconds)
+    setTimeout(() => {
+        console.log("Hey 4");
+    }, Math.floor(Math.random() * 10) * 1000);
+
+    console.log("Hey 5");
+    console.log("Hey 6");
+
+    /*
+        When a function is passed as an argument to another function,
+        it is called a CALLBACK function.
+    */
+
+    // =========================
+    // Callback example
+    // =========================
+    function runAfterSomeTime(callback) {
+        setTimeout(callback, 5000);
+    }
+
+    runAfterSomeTime(function () {
+        console.log("runAfterSomeTime function is called...");
+    });
+
+    // =========================
+    // Simulating API call with callback
+    // =========================
+    function profileFetching(username, callback) {
+        setTimeout(() => {
+            callback({
+                username: username,
+                age: 19,
+                role: "Developer"
+            });
+        }, 2000);
+    }
+
+    profileFetching("Vansh", function (data) {
+        console.log("Profile Data:", data);
+    });
+
+    // =========================
+    // CALLBACK HELL EXAMPLE
+    // =========================
+
+    function loginUser(username, callback) {
+        setTimeout(() => {
+            callback({ id: 1, username: username });
+        }, 1000);
+    }
+
+    function getUserProfile(userId, callback) {
+        setTimeout(() => {
+            callback({ id: userId, name: "Vansh", age: 19 });
+        }, 1000);
+    }
+
+    function getUserPosts(profileId, callback) {
+        setTimeout(() => {
+            callback([
+                { id: 101, title: "My First Post" },
+                { id: 102, title: "Learning JavaScript" }
+            ]);
+        }, 1000);
+    }
+
+    function getPostComments(postId, callback) {
+        setTimeout(() => {
+            callback([
+                { id: 1, comment: "Great post!" },
+                { id: 2, comment: "Very helpful 👍" }
+            ]);
+        }, 1000);
+    }
+
+    // Callback Hell (Pyramid of Doom)
+    loginUser("vansh123", function (user) {
+        getUserProfile(user.id, function (profile) {
+            getUserPosts(profile.id, function (posts) {
+                getPostComments(posts[0].id, function (comments) {
+                    console.log("User:", user);
+                    console.log("Profile:", profile);
+                    console.log("Posts:", posts);
+                    console.log("Comments:", comments);
+                });
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>

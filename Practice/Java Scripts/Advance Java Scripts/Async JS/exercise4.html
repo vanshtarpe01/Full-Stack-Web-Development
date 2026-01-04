@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+
+
+    <script>
+        // Fetch Api
+
+        fetch("https://randomuser.me/api/").then((rawdata)=>{
+            console.log(rawdata);
+            let data = rawdata.json();
+            return data;
+        }).then((data)=>{
+            console.log(data.results[0].name);
+        }).catch((err) =>{
+            console.log(err);
+        });
+    </script>
+
+</body>
+</html>

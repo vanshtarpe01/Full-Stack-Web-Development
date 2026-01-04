@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singleton Pattern</title>
+</head>
+
+<body>
+
+    <script>
+        // Only ONE instance of an object exists throughout the application.
+        // Real-World Examples
+        // App configuration
+        // Database connection
+        // Logger service
+        // Cache manager
+
+        // Create once → Reuse everywhere
+
+        const Singleton = (function () {
+            let instance;
+
+            function createInstance() {
+                return { name: "I am single" };
+            }
+
+            return {
+                getInstance: function () {
+                    if (!instance) {
+                        instance = createInstance();
+                    }
+                    return instance;
+                }
+            };
+        })();
+
+        const a = Singleton.getInstance();
+        const b = Singleton.getInstance();
+
+        console.log(a === b); // true
+
+    </script>
+</body>
+
+</html>

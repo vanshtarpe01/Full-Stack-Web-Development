@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Patterns</title>
+</head>
+
+<body>
+    <script>
+        // Module Pattern 
+        // The Module Pattern is one of the most important design patterns in JavaScript.It helps you organize code, hide private data, and expose only what is needed.
+        // JavaScript does not have true private variables (especially before ES6 classes).The Module Pattern solves this using closures.
+        // Data encapsulation
+        // Avoids global variables
+        // Cleaner and safer code
+        // Very common in real projects
+
+        // IIFE (Immediately Invoked Function Expression)
+        // This function runs immediately and returns 12
+        let fnc = (function () {
+            return 12;
+        })();
+
+        // Logs the returned value from the IIFE
+        console.log(fnc);
+
+
+        // Bank module using IIFE for data privacy
+        let Bank = (function () {
+
+            // Private variable (cannot be accessed directly outside)
+            let bankBalance = 12000;
+
+            // Function to check current balance
+            function checkBalance() {
+                console.log(bankBalance);
+            }
+
+            // Function to add amount to balance
+            function setBalance(val) {
+                bankBalance += val;
+            }
+
+            // Function to withdraw money
+            function widthdraw(val) {
+                // Check if sufficient balance is available
+                if (val <= bankBalance) {
+                    bankBalance -= val;
+                    console.log(`Withdraw Amount :- `, val);
+                    console.log(`Remaining Balance :- `, bankBalance);
+                }
+            }
+
+            // Expose only selected functions (public methods)
+            return {
+                checkBalance,
+                setBalance,
+                widthdraw
+            };
+        })();
+
+        // Check initial balance
+        Bank.checkBalance();
+
+        // Add 2000 to balance
+        Bank.setBalance(2000);
+        Bank.checkBalance();
+
+        // Withdraw 5000 from balance
+        Bank.widthdraw(5000);
+
+        // Check final balance
+        Bank.checkBalance();
+
+
+        // Revealing Module Pattern
+        // Same as Module Pattern, but we rename functions while returning them
+        let Employee = (function () {
+
+            // Private variables (intended to be accessed only inside the module)
+            let emp_id;
+            let emp_name;
+            let salary;
+
+            // Function to set employee details
+            function setEmpDets(id, name, sal) {
+                emp_id = id;
+                emp_name = name;
+                salary = sal;
+            }
+
+            // Function to get employee details
+            function getEmpDets() {
+                console.log("Empolyee ID :- ", emp_id);
+                console.log("Empolyee Name :- ", emp_name);
+                console.log("Empolyee Salary :- ", salary);
+            }
+
+            // Revealing the functions with different names
+            return {
+                e_Set_Dets: setEmpDets,
+                e_Get_Dets: getEmpDets
+            };
+        })();
+
+        // Setting employee details
+        Employee.e_Set_Dets("emp_001", "Vansh", 15000);
+
+        // Getting employee details
+        Employee.e_Get_Dets();
+
+
+    </script>
+</body>
+
+</html>

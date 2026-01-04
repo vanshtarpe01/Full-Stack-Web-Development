@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Function Pattern</title>
+</head>
+
+<body>
+
+    <script>
+
+        // The Factory Pattern is a creational design pattern used to create objects without exposing the object-creation logic.
+        // Avoids complex if / else scattered everywhere
+        // Centralizes object creation
+        // Makes code cleaner and scalable
+        // You → Factory → Object
+        // Factory function to create a product
+        function createProduct(name, price) {
+
+            // Private variable (cannot be accessed directly from outside)
+            let stock = 10;
+
+            // Return an object with public properties and methods
+            return {
+                // Public properties
+                name,
+                price,
+
+                // Method to check current stock
+                checkStock() {
+                    console.log(stock);
+                },
+
+                // Method to buy a product
+                buy(qty) {
+                    // Check if requested quantity is available
+                    if (qty <= stock) {
+                        stock -= qty;
+                        console.log(`Booked ${qty} Pieces - Available in Stock ${stock}`);
+                    } else {
+                        // Error message if stock is insufficient
+                        console.error(`We don't have that much stock - Available in Stock ${stock}`);
+                    }
+                },
+
+                // Method to refill stock
+                refill(qty) {
+                    stock += qty;
+                }
+            };
+        }
+
+        // Creating a product instance
+        let myPhone = createProduct("Realme C65", 12100);
+
+        // Checking stock and performing operations
+        myPhone.checkStock();   // 10
+        myPhone.buy(4);         // Buy 4 items
+        myPhone.checkStock();   // 6
+        myPhone.refill(25);     // Add 25 items to stock
+        myPhone.checkStock();   // 31
+        // myPhone.buy(214);     // Uncomment to test insufficient stock case
+
+    </script>
+</body>
+
+</html>

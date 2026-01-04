@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises In JS</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            PROMISES IN JAVASCRIPT
+    
+            A Promise represents a value that may be available now,
+            in the future, or never.
+            A Promise has three states:
+            1. Pending
+            2. Fulfilled (Resolved)
+            3. Rejected
+        */
+
+        // Creating a new Promise
+        let pr = new Promise(function (resolve, reject) {
+
+            // Simulating an asynchronous task using setTimeout
+            setTimeout(() => {
+
+                // Generate a random number between 0 and 9
+                let rn = Math.floor(Math.random() * 10);
+
+                // If the random number is greater than or equal to 5,
+                // the promise will be resolved
+                if (rn >= 5) {
+                    resolve("Promise is Resolved :- " + rn);
+                }
+                // Otherwise, the promise will be rejected
+                else {
+                    reject("Promise is Rejected :- " + rn);
+                }
+
+            }, 3000); // 3 seconds delay
+        });
+
+        // Handling the resolved state of the promise
+        pr.then(function (val) {
+            console.log(val);
+        })
+
+            // Handling the rejected state of the promise
+            .catch(function (val) {
+                console.log(val);
+            });
+
+    </script>
+
+</body>
+
+</html>
