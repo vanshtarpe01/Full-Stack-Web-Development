@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+
+<body>
+
+    <input type="text">
+
+    <script>
+        // Debouncing is a technique used to limit how often a function runs.
+        // 👉 The function executes only after a certain amount of time has passed since the last event.
+        
+        // Real-Life Example
+        // 📱 Typing in a search box
+        // User types fast
+        // You don’t want to call the API on every keystroke
+        // Call API only after the user stops typing
+
+        let input = document.querySelector("input");
+
+        // let count = 0;
+        // input.addEventListener("input", function(){
+        //     count++;
+        //     console.log("Typed ", count);
+        // });
+
+
+        function debounce(func, delay){
+            let timer;
+            return function(...args){
+                clearTimeout(timer);
+                timer = setTimeout(()=>{
+                    func(...args);
+                }, delay);
+            }
+        }
+
+        input.addEventListener("input", debounce(function(){
+            console.log("typed");
+        }, 1000));
+
+
+        // Real-World Use Cases
+        // Search bars 🔍
+        // Window resize events 🖥️
+        // Button spam prevention 🚫
+        // Auto-save drafts 💾
+
+        // “Debouncing ensures that a function is executed only after a certain delay once the event stops firing.”
+    </script>
+</body>
+
+</html>

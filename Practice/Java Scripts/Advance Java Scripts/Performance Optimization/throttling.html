@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+</head>
+<body>
+    
+    <input type="text">
+
+    <script>
+        // Throttling is a technique used to limit how often a function is executed over time.
+        // 👉 Unlike debouncing (which waits until events stop), throttling ensures the function runs at regular intervals, no matter how many events occur.
+
+        // 🧠 Real-Life Example
+        // 📌 Window scroll event
+        // User scrolls quickly
+        // You don’t want to run the scroll handler on every pixel
+        // You want the handler to run at most once every 100ms
+
+        let input = document.querySelector("input");
+
+        function throttle(func, delay){
+            let timer = 0;
+
+            return function(...args){
+                let now = Date.now();
+                if(now - timer >= delay){
+                    timer = now;
+                    func(...args);
+                }
+            };
+        }
+
+        input.addEventListener("input", throttle(function(){
+            console.log("Hey Typed");
+        }, 1000));
+
+
+        // Real-World Use Cases
+        // Scroll-based animations
+        // Infinite scrolling / lazy loading
+        // Resize events
+        // Button clicks (rate limiting)
+
+        // “Throttling ensures a function is called at most once every fixed interval, no matter how many times the event occurs.”
+    </script>
+</body>
+</html>
