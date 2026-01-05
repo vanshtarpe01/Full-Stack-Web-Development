@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Object Literals</title>
+</head>
+<body>
+    
+
+    <script>
+        // Create an object representing a student with name, age, and marks.
+        let student = {
+            name : "Vansh",
+            age : 19, 
+            marks : 75
+        };
+
+        console.log(student);
+        // Access object properties using dot and bracket notation.
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.marks);
+
+        // Access object properties using dot and bracket notation.
+        student.city = "Amravati";
+        console.log(student.city);
+
+        // Add a new property to an existing object.
+        console.log(student);
+        delete student.city;
+        console.log(student);
+
+        // Loop through all properties of an object.
+        for(let key in student){
+            console.log(key, " : ", student[key]);
+        }
+
+    </script>
+</body>
+</html>
