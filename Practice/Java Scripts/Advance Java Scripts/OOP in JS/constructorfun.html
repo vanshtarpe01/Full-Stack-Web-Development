@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function In JS</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Create a constructor function Person.
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+
+            // Add a method inside a constructor.
+            this.sayHello = function(){
+                console.log(`Hello ${this.name}, Good Night...`);
+            }
+
+        }
+
+        // Create multiple objects using the constructor
+        let p1 = new Person("Vansh", 19);
+        let p2 = new Person("Suraj", 20);
+
+        console.log(p1);
+        console.log(p1.name);
+        console.log(p2);
+        console.log(p1.sayHello());
+
+        // Add a property to an object created using constructor.
+        p1.city = "Amravati";
+        console.log(p1.city);
+
+        // Check constructor of an object.
+        console.log(p1.constructor == Person);
+
+
+        // Create a constructor for Car with brand and price.
+        function Car(model, brand, price="55 Lakh"){
+            this.model = model;
+            this.brand = brand;
+            this.price = price;
+
+            this.carDets = function(){
+                console.log(`Car Model : ${this.model}`);
+                console.log(`Car Brand : ${this.brand}`);
+                console.log(`Car Price : ${this.price}`);
+            }
+        }
+
+        let c1 = new Car("Fortuner-Legender", "Toyota", "55 Lakh");
+        console.log(c1);
+        c1.carDets();
+        let c2 = new Car("Hyryder", "Toyota");
+        c2.carDets();
+
+        // Without 'new', 'this' refers to global object (window in browser) 
+        // So brand and price get assigned to window.brand and window.price
+
+    </script>
+</body>
+
+</html>

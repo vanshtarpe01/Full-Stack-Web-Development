@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objects and Object Literals</title>
 </head>
+
 <body>
-    
+
 
     <script>
         // Create an object representing a student with name, age, and marks.
         let student = {
-            name : "Vansh",
-            age : 19, 
-            marks : 75
+            name: "Vansh",
+            age: 19,
+            marks: 75
         };
 
         console.log(student);
@@ -32,10 +34,45 @@
         console.log(student);
 
         // Loop through all properties of an object.
-        for(let key in student){
+        for (let key in student) {
             console.log(key, " : ", student[key]);
         }
 
+        // Check if a property exists in an object.
+
+        console.log("marks" in student);
+        console.log("roll" in student);
+
+        // Clone an object without modifying the original.
+        // Using Object.assign 
+        const clone1 = Object.assign({}, student);
+        // Using spread operator 
+        const clone2 = { ...student };
+        console.log(clone1);
+        console.log(clone2);
+
+        // Merge two objects into one.
+        const extraInfo = { hobby: "Coding", city: "Nagpur" };
+
+        // Using Object.assign
+        const merged1 = Object.assign({}, student, extraInfo);
+
+        // Using spread operator
+        const merged2 = { ...student, ...extraInfo };
+
+        console.log(merged1);
+        console.log(merged2);
+
+        // Convert object keys into an array.
+        const keys = Object.keys(student);
+        console.log(keys); // ["name", "marks", "course"]
+
+
+        // Convert object values into an array.
+        const values =Object.values(student);
+        console.log(values);
+
     </script>
 </body>
+
 </html>

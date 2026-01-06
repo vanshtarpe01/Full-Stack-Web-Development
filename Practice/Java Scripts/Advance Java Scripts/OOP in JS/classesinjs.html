@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes In Js</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Create a class User with properties.
+        class User {
+
+            // Create a class with a constructor.
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Add methods inside a class.
+            sayHello() {
+                console.log(`Hello Mr/Mrs. ${this.name}`);
+            }
+
+            // Add a method that updates object data.
+            upDateAge(newAge) {
+                this.age = newAge;
+            }
+        }
+
+        // Create an object from a class.
+        let u1 = new User("Vansh", 19);
+        console.log(u1);
+        console.log(u1.name);
+        console.log(u1.age);
+        u1.upDateAge(22);
+        console.log(u1.age);
+        u1.sayHello();
+        let u2 = new User("Soham", 18);
+        console.log(u2);
+
+
+        // Convert constructor function into class syntax.
+        // Old constructor function
+        function Car(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        // Converted to class
+        class Car {
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            showInfo() {
+                return `${this.brand} costs ${this.price}`;
+            }
+        }
+
+        const c1 = new Car("Tesla", 50000);
+        console.log(c1.showInfo()); // "Tesla costs 50000"
+
+    </script>
+</body>
+
+</html>
