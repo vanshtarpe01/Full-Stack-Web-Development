@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation in Js</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Restrict direct access to object properties.
+        class User {
+            constructor(name, password) {
+                this._name = name; // convention: underscore means "private"
+                let _password = password; // closure truly hides it
+
+
+                // Use getter to read a private value.
+                this.getPassword = function () {
+                    return _password; // only accessible via getter
+                };
+
+                // Use setter to update a value safely.
+                this.changePassword = function (newPass) {
+                    _password = newPass;
+                }
+            }
+        }
+
+        const u = new User("Vansh", "secret123");
+        console.log(u._name); // accessible but marked private 
+        console.log(u._password); // accessible but marked private 
+        console.log(u.getPassword()); // "secret123"
+        u.changePassword("secret456"); // "secret123"
+        console.log(u.getPassword()); // "secret456"
+
+
+        // Prevent modification of object properties
+        const obj = { name: "Vansh" };
+        Object.defineProperty(obj, "name", {
+            writable: false
+        });
+
+        console.dir(obj);
+
+        obj.name = "Alis"; // ignored
+        console.log(obj.name); // "Vansh"
+
+
+        // Validate data using setters.
+        class People {
+            constructor(age) {
+                this._age = age;
+            }
+
+            validateAge() {
+                if (this._name > 100 && this._name > 0) {
+                    console.log("Age is acceptable..");
+                } else {
+                    console.log("Entered age is Inavlid");
+                }
+            }
+
+            getAge() {
+                console.log(`You entered age is ${this._age}`);
+            }
+        }
+
+        let nwObj = new People(190);
+        nwObj.validateAge();
+        nwObj.getAge();
+
+
+        // Hide sensitive data (password, token).
+        class SecurePass {
+            constructor(name, password) {
+                this._name = name;
+                let _password = password;
+
+                this.checkPassword = function (pass) {
+                    return pass === _password;
+                }
+            }
+        }
+
+        const su = new SecurePass("Vansh", "Secure123");
+        console.log(su.checkPassword("Secure123")); //True
+        console.log(su._password); // Undefined
+
+        // Create read-only property.
+        const obj2 = {};
+        Object.defineProperty(obj2, "id", {
+            value: 101,
+            writable: false,
+            enumerable: true,
+            configurable: false
+        });
+
+        console.log(obj2.id); // 101
+        obj2.id = 202;        // ignored
+
+        // Protect object from accidental overwrite.
+        const safeObj = { key: "value" };
+        Object.freeze(safeObj); // prevents overwrite, add, delete
+
+        safeObj.key = "newValue"; // ignored
+        console.log(safeObj.key); // "value"
+
+
+    </script>
+</body>
+
+</html>

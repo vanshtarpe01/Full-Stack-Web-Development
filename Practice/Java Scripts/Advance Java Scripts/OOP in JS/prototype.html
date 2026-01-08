@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype and Prototype Chain</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // In JavaScript, every function has a prototype object.
+        // This object is used to share properties and methods among all instances created using that function.
+        // 👉 Instead of each object having its own copy of a method, all objects share one method via prototype.
+
+        // Prototype is an object from which other objects inherit properties and methods
+
+        // What is the Prototype Chain?
+        // When you try to access a property or method:
+        // JavaScript first looks inside the object itself
+        // If not found, it looks in the object's prototype
+        // Then prototype’s prototype
+        // Continues until null
+        // This lookup path is called the prototype chain.
+        // object → prototype → prototype → null
+
+
+        // Add a method using prototype.
+        function Animal(name) {
+            this.name = name;
+        }
+
+        // Adding method via prototype
+        Animal.prototype.speak = function () {
+            console.log(this.name + " makes a sound");
+        };
+
+        const a1 = new Animal("Tiger");
+        const a2 = new Animal("Lion");
+
+        // Access prototype method from object.
+        a1.speak();
+        a2.speak();
+        // ✅ Only one copy of speak() exists in memory.
+
+        // Check prototype of an object.
+        console.log(Object.getPrototypeOf(a1));
+
+        // Add property to prototype and observe behavior.
+        Animal.prototype.type = "Wild";
+
+        console.log(a1.type); // Wild
+        console.log(a2.type); // Wild
+
+        // Compare own property vs prototype property.
+        a1.type = "Domestic";
+
+        console.log(a1.type); // Domestic (own property)
+        console.log(a2.type); // Wild (prototype property)
+
+        // Check ownership
+        console.log(a1.hasOwnProperty("type")); // true
+        console.log(a2.hasOwnProperty("type")); // false
+
+        // Create custom prototype chain.
+        function Animal() { }
+        Animal.prototype.eat = function () {
+            console.log("Eating...");
+        };
+
+        function Dog() { }
+        Dog.prototype = Object.create(Animal.prototype);
+
+        Dog.prototype.bark = function () {
+            console.log("Bark Bark");
+        };
+
+        const d1 = new Dog();
+        d1.eat();   // From Animal
+        d1.bark();  // From Dog
+
+        // d1 → Dog.prototype → Animal.prototype → Object.prototype → null
+
+        // Override prototype method.
+        Dog.prototype.eat = function () {
+            console.log("Dog is eating");
+        };
+
+        d1.eat(); // Dog is eating
+        
+    </script>
+</body>
+
+</html>

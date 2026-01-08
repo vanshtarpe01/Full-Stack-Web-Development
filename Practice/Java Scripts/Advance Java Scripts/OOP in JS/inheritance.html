@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in JS</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Base class Animal
+        class Animal {
+            constructor(name, type, sound) {
+                this.name = name;
+                this.type = type;
+                this.sound = sound;
+            }
+
+            getAnimalDets() {
+                console.log(`Animal Name :- ${this.name}`);
+                console.log(`Animal Type :- ${this.type}`);
+            }
+
+            speak() {
+                return `${this.name} makes a ${this.sound} sound.`;
+            }
+        }
+
+        // Child class Dog extends Animal
+        class Dog extends Animal {
+            constructor(name, type) {
+                // Call parent constructor ONCE with all required arguments
+                super(name, type, "Bark");
+            }
+
+            dogProps() {
+                console.log("Name :", this.name);
+                console.log("Type :", this.type);
+            }
+
+            // Override parent method
+            speak() {
+                console.log("Bhouu Bhou Bhouuuuu...");
+            }
+
+            // Call parent method from child
+            parentSpeak() {
+                console.log(super.speak());
+            }
+        }
+
+        // Create Animal object
+        const ani1 = new Animal("Tiger", "Wild", "Loud");
+        ani1.getAnimalDets();
+        console.log(ani1.speak());
+
+        // Create Dog object
+        const d1 = new Dog("Sheru", "Domestic");
+        d1.dogProps();
+        d1.speak();
+        // Call parent method from child.
+        d1.parentSpeak();
+
+
+        // Create multilevel inheritance.
+        class Puppy extends Dog {
+            constructor(name, breed, age) {
+                super(name, breed);
+                this.age = age;
+            }
+
+            speak() {
+                return `${this.name} yips softly.`;
+            }
+        }
+
+        const p = new Puppy("Max", "Beagle", 1);
+        console.log(p.speak()); // "Max yips softly."
+
+        // Check instance using instanceof.
+        console.log(d1 instanceof(Dog));
+        // console.log(d3 instanceof(Dog));
+    </script>
+</body>
+
+</html>

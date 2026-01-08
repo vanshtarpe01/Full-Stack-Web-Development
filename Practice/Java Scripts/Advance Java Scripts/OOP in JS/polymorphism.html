@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism in JS</title>
+</head>
+
+<body>
+    <script>
+        // Create same method name in parent & child.
+        class Animal {
+            aniClass() {
+                console.log("Method From Animal Class");
+            }
+            speak() {
+                return "Animal makes an Sound.";
+            }
+        }
+
+        class Dog extends Animal {
+            speak() {
+                return "Dog Barks..";
+            }
+        }
+
+        let a1 = new Animal();
+        console.log(a1.speak()); // Animal makes an Sound.
+        let d1 = new Dog();
+        console.log(d1.speak()); // "Dog Barks.." (overridden)
+        d1.aniClass();
+
+        // Use polymorphism with multiple objects
+        const animals = [new Animal(), new Dog()];
+        animals.forEach(animal => {
+            console.log(animal.speak());
+            // Calls correct method depending on object type
+        });
+
+        // Code behaves differently for different classes
+        class Cat extends Animal {
+            speak() {
+                return "Cat meows!";
+            }
+        }
+
+        const pets = [new Dog(), new Cat()];
+        pets.forEach(pet => console.log(pet.speak()));
+        // Output: "Dog barks!" then "Cat meows!"
+
+        // Demonstrate method overriding
+        class Bird extends Animal {
+            speak() {
+                return "Bird chirps!";
+            }
+        }
+
+        const b = new Bird();
+        console.log(b.speak()); // "Bird chirps!" (overrides Animal.speak)
+
+
+
+        // Replace if-else using polymorphism.
+        if (animalType === "dog") {
+            console.log("Dog barks!");
+        } else if (animalType === "cat") {
+            console.log("Cat meows!");
+        }
+
+        const zoo = [new Dog(), new Cat(), new Bird()];
+        zoo.forEach(animal => console.log(animal.speak()));
+
+        // Real-world polymorphism example
+        class Payment {
+            process() {
+                return "Processing generic payment.";
+            }
+        }
+
+        class CreditCardPayment extends Payment {
+            process() {
+                return "Processing credit card payment.";
+            }
+        }
+
+        class PayPalPayment extends Payment {
+            process() {
+                return "Processing PayPal payment.";
+            }
+        }
+
+        const payments = [new CreditCardPayment(), new PayPalPayment()];
+        payments.forEach(p => console.log(p.process()));
+
+    </script>
+</body>
+
+</html>
