@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Testing</title>
+</head>
+
+<body>
+    <script>
+
+        // This concept is called DOM Optimization using Batching (or Minimizing Reflows & Repaints).
+        // =========================
+        // Code 1: Direct DOM Updates
+        // =========================
+
+        // Start performance timer
+        const t1 = performance.now();
+
+        // Appending each <p> directly to the DOM
+        // This causes multiple reflows & repaints
+        for (let i = 0; i <= 100; i++) {
+            let para = document.createElement("p");
+            para.textContent = "This is Para " + i;
+            document.body.appendChild(para);
+        }
+
+        // End performance timer
+        const t2 = performance.now();
+
+        console.log("Total time by code 1: " + (t2 - t1));
+
+        // =========================
+        // Code 2: Batched DOM Updates
+        // =========================
+
+        // Start performance timer
+        const t3 = performance.now();
+
+        // Create a container element (not yet in DOM)
+        let myDiv = document.createElement("div");
+
+        // Append <p> elements to the detached div
+        // No reflow/repaint happens here
+        for (let i = 0; i <= 100; i++) {
+            let para = document.createElement("p");
+            para.textContent = "This is Para " + i;
+            myDiv.appendChild(para);
+        }
+
+        // Append the div to the DOM only once
+        // Triggers reflow & repaint a single time
+        document.body.appendChild(myDiv);
+
+        // End performance timer
+        const t4 = performance.now();
+
+        console.log("Total time by code 2: " + (t4 - t3));
+
+        // DocumentFragment is a lightweight, in-memory DOM container used to build and store DOM nodes off-screen before inserting them into the actual document.
+        // Why Use DocumentFragment?
+        // ✅ Prevents unnecessary reflows & repaints
+        // ✅ Faster rendering for large DOM updates
+        // ✅ Cleaner and more efficient than appending elements one by one
+        // ✅ Commonly used internally by modern frameworks
+
+        // Create a DocumentFragment (not attached to the DOM)
+        let fragment = document.createDocumentFragment();
+
+        // Build DOM nodes inside the fragment
+        for (let i = 0; i <= 100; i++) {
+            let para = document.createElement("p");
+            para.textContent = "This is Para " + i;
+
+            // Appending to fragment does NOT cause reflow or repaint
+            // because fragment is not part of the live DOM
+            fragment.appendChild(para);
+        }
+
+        // Appending the fragment to the DOM
+        // All <p> elements are inserted at once
+        // This causes only ONE reflow and ONE repaint
+        document.body.appendChild(fragment);
+
+        // DocumentFragment is a temporary DOM container that allows batching multiple DOM updates and inserting them into the document with minimal reflow and repaint.
+    </script>
+</body>
+
+</html>

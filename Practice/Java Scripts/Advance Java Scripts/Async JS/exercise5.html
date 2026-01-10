@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC JS</title>
+</head>
+
+<body>
+    <script>
+        // Governs how we perform tasks which take some time to complete
+        // (e.g Getting data from a database)
+        // Start something now and finish it later
+
+        // JavaScript can run One statement at a time(Single Threaded)
+
+        console.log(1);
+        console.log(2);
+        setTimeout(() => console.log("Set Time Out is executed..."), 3000);
+        console.log(3);
+        console.log(4);
+
+        const getTodos = (resource, callback) => {
+            // HTTP Requests
+            // Make HTTP requests to get data from another server
+            // We make these requests to API endpoints
+            // Clinet -> HTTP Requests -> Server -> Response -> Client 
+
+            const request = new XMLHttpRequest();
+            request.addEventListener("readystatechange", () => {
+                // console.log(request, request.readyState);
+                // Ready State 0 : Unsend, Ready State 1: open(), Ready State 2 : send(), 
+                // Ready State 3 : Responese Text and Ready State 4 : Fullfill or Done 
+                if (request.readyState === 4 && request.status === 200) {
+                    // console.log(request.responseText);
+                    const data = JSON.parse(request.responseText);
+                    callback(undefined, data);
+                } else if (request.readyState === 4) {
+                    // console.log("Could not fetch the data");
+                    callback("Could not fetch the data", undefined);
+                }
+
+                // Status Code :- 100 : Proceesing(Information Responses), 200 : OK(Sucess Responses), 
+                // 300 : Redirected Messages, 404 : Resource not found(Client Error Responses), 503 : Service Unavaliable(Server Error Responses) 
+            });
+            // request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+            request.open("GET", resource);
+            request.send();
+        }
+
+        console.log(5);
+        console.log(6);
+
+        getTodos("users.json",(err, data) => {
+            console.log("CallBack Fired...");
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(data);
+            }
+        });
+        console.log(7);
+        console.log(8);
+    </script>
+</body>
+
+</html>
