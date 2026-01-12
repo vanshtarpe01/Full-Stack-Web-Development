@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(sky_img.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    text-align: center;
+    background-color: rgba(225, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #333;
+}
+h1{
+    margin-bottom: 20px;
+}
+#city-input{
+    padding: 10px;
+    font-size: 14px;
+    width: 80%;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #949393;
+    background-color: #ffffff00;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+    background-color: #2980b9;
+}
+
+p{
+    font-size: 18px;
+    color: #555;
+}
