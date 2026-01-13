@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <header>
+        <h3>Expense Tracker</h3>
+    </header>
+
+    <div class="container">
+        <h4>Your Balance</h4>
+        <h1 id="balance">&#8377; 0.00</h1>
+
+        <div class="exp-in">
+            <div class="incomeRemove">
+                <h4>Income</h4>
+                <p class="plus" id="income">&#8377; +0.00</p>
+            </div>
+
+            <div class="expRemove">
+                <h4>Expense</h4>
+                <p class="plus" id="expense">&#8377; -0.00</p>
+            </div>
+
+            <!-- Tabs -->
+            <button class="expense active" data-tab="expense">Expense</button>
+            <button class="income" data-tab="income">Income</button>
+        </div>
+
+        <h3>Add new transaction</h3>
+
+        <form id="form">
+            <div>
+                <label for="text">Name</label>
+                <input type="text" id="text" placeholder="Name of transaction" required>
+            </div>
+
+            <div>
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" placeholder="Amount" required>
+            </div>
+
+            <button class="btns" type="submit">
+                <i class="fa-solid fa-circle-plus fa-2xl"></i>
+            </button>
+        </form>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
