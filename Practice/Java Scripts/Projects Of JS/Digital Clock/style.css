@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: black;
+  }
+  .clock{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    font-size: 2.5rem;
+  }
+  .clock span{
+    padding: 20px;
+    background-color: rgba(2, 85, 84, 0.123);
+    box-shadow: inset 0px 2px 15px rgba(127, 255, 212, 0.664);
+    border-radius: 20px;
+  }
