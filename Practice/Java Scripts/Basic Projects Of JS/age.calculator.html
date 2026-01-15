@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            justify-content: center;
+            background-color: white;
+            padding: 60px;
+            border-radius: 12px;
+            transition: all 1s ease;
+            box-shadow: 3px 2px 14px rgb(175, 175, 175), inset 3px -2px 14px rgb(218, 218, 218);
+
+        }
+
+        .container:hover{
+            box-shadow: inset 3px 2px 14px rgb(175, 175, 175), inset 3px -2px 14px rgb(218, 218, 218);
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 14px 24px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 14px;
+            background-color: #ff6d6d;
+            color: white;
+            box-shadow: 2px 4px 4px rgb(255, 162, 162);
+            /* transition: all 0.3s ease; */
+        }
+
+        button:hover {
+            background-color: #ff5353;
+            box-shadow: inset 2px 4px 4px rgb(255, 162, 162);
+        }
+
+        p {
+            display: none;
+        }
+
+        .show {
+            display: initial;
+        }
+
+        p span {
+            font-size: 28px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Age Calculator</h1>
+        <h4>Enter your birthdate:</h4>
+        <input type="date">
+        <button onclick="calculateAge()">Calculate</button>
+        <p>Your age is: <span></span></p>
+    </div>
+
+
+    <script>
+        function calculateAge() {
+            let birthdate = document.querySelector("input").value;
+            if (!birthdate) return;
+
+            let today = new Date();
+            let birth = new Date(birthdate);
+
+            let age = today.getFullYear() - birth.getFullYear();
+            let monthDiff = today.getMonth() - birth.getMonth();
+
+            if (
+                monthDiff < 0 ||
+                (monthDiff === 0 && today.getDate() < birth.getDate())
+            ) {
+                age--;
+            }
+
+            const span = document.querySelector("span");
+            const p = document.querySelector("p");
+
+            span.innerText = age;
+            p.classList.add("show");
+        }
+    </script>
+
+
+</body>
+
+</html>

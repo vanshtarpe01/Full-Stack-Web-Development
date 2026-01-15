@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Copy & Paste</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 10px;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="textBox">
+
+    <button onclick="copyText()">
+        <i class="fa-solid fa-copy"></i>
+    </button>
+
+    <button onclick="pasteText()">
+        <i class="fa-solid fa-paste"></i>
+    </button>
+
+    <script>
+        function copyText() {
+            let input = document.getElementById("textBox");
+            input.select();
+            navigator.clipboard.writeText(input.value);
+        }
+
+        // function copyText() {
+        //     let text = document.getElementById('copy');
+        //     text.select();
+        //     document.execCommand('copy');
+        // }
+
+
+        function pasteText() {
+            navigator.clipboard.readText()
+                .then(text => {
+                    document.getElementById("textBox").value = text;
+                })
+                .catch(err => {
+                    console.error("Failed to paste:", err);
+                });
+        }
+    </script>
+
+</body>
+
+</html>
