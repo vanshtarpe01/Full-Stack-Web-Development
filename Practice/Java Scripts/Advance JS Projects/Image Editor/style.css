@@ -92,6 +92,8 @@ main section .right .filters{
 main section .right .filter{
     width: 100%; 
 }
+
+
 main section .right .filter input{
     width: 100%;
     outline: none;
@@ -105,7 +107,7 @@ main section .right .filter input::-webkit-slider-thumb{
     height: 20px;
     border-radius: 50%;
     background-color: red;
-    margin: -8.5px;
+    margin-top: -8.5px;
 }
 main section .right .filter input::-webkit-slider-runnable-track{
     background-color: var(--bg-active-color);
@@ -115,4 +117,11 @@ main section .right .filter input::-webkit-slider-runnable-track{
 canvas{
     max-width: 90%;
     max-height: 80vh;
+    display: none;
+}
+
+.presets{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-sm);
 }
