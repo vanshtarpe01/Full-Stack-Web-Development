@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+/* font-family: "Hurricane", cursive;
+  font-weight: 400;
+  font-style: normal; */
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal; */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: none;
+}
+
+.navconatiner {
+  width: 100vw;
+  min-height: 100px;
+  background-color: white;
+  box-shadow: 0px 0.5px 1px 1px rgb(226, 226, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navlist {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#imglogo {
+  width: 256px;
+  height: 57px;
+  margin-top: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-elements {
+  font-size: 18px;
+  font-family: "Jost", sans-serif;
+  font-weight: 650;
+  margin-top: 20px;
+  font-style: normal;
+
+}
+
+#searchicon {
+  width: 65px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: -14px;
+}
+
+.maincontent {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: none;
+}
+
+.mainheading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+#heading1 {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+#heading2 {
+  font-size: 48px;
+  letter-spacing: 2px;
+  font-family: "Hurricane", cursive;
+  font-weight: 400;
+  color: rgb(105, 51, 101);
+  text-align: center;
+}
+
+.contentimg {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 10px;
+  position: relative;
+}
+
+.imgcontent {
+  width: 275px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.imgcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 1.1s;
+  transition-timing-function: ease-in;
+}
+
+.imgtitle {
+  font-size: 12px;
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  background-color: rgba(240, 178, 63, 0.938);
+  padding: 12px 22px;
+  color: white;
+  bottom: -10px;
+}
+
+.imgcontainer:hover {
+  transform: scale(1.02);
+}
+
+.recipescontent{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: none;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  font-size: 28px;
+  font-family: "Jost", sans-serif;
+  font-weight: 650;
+  margin-top: 50px;
+  font-style: normal;
+  color: rgb(63, 63, 63);
+}
+.recipe{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgb(236, 236, 236);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgb(247, 247, 247), -2px -2px 2px 1px rgb(247, 247, 247);
+  padding: 20px;
+  margin: 12px 0px;
+}
+
+.recipeimage{
+  width: 300px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 100px 25px 100px 25px;
+}
+
+.recipeheading{
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+}
+.subtitle{
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+  font-weight: 450;
+}
+.liitems{
+  padding: 5px;
+  margin-left: 20px;
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  list-style-position: inside;
+}
+.footer {
+  height: 8vh;
+  background-color: white;
+  box-shadow: 0px -0.5px 1px 1px rgb(226, 226, 226);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 14px;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
