@@ -1,0 +1,32 @@
+/* Module Css */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: azure;
+}
+
+.hero h1 {
+    color: steelblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    text-decoration: dotted;
+}
+
+.hero h3 {
+    color: crimson;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.hero button {
+    background-color: rgb(57, 16, 204);
+    color: rgb(148, 210, 238);
+    margin: 5px;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 5px;
+}

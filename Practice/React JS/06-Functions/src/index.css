@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+button{
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: sienna;
+  color: beige;
+}
+.box{
+  height: 200px;
+  width: 200px;
+  background-color: violet;
+}
+
+.page1{
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+}
+.page2{
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+}
+.page3{
+  height: 100vh;
+  width: 100%;
+  background-color: #333;
+}

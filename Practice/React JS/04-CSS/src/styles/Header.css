@@ -1,0 +1,14 @@
+
+.header{
+  background-color: yellowgreen;
+  color: black;
+}
+
+.header button{
+   background-color: rgb(5, 105, 72);
+  color: cornsilk;
+  margin: 5px;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 5px;
+}
