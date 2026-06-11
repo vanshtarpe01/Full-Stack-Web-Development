@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: lightseagreen;
+  align-items: center;
+  padding:14px 40px;
+}
+.nav2{
+  display: flex;
+  gap: 30px;
+}
