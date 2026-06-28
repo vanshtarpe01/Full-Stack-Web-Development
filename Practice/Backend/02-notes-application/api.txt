@@ -1,0 +1,7 @@
+API = Application Programming Interface : It is used to communicate with two or more different Application
+REST(Representational State Transfer) : It uses HTTP method to communicate
+GET : Get method is used to get the data from the server(Fetching data from server)
+PUT : It is used for update purpose
+DELETE : Delete is used for Delete purpose (Delete data from the server)
+PATCH : It is also used for update purpose (Update the data that is available on the server)
+POST : It is used to send the data to the server (Sedning data to server)
