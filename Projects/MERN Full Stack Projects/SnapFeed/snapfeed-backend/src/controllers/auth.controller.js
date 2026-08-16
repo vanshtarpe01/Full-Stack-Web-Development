@@ -73,7 +73,7 @@ async function userLoginController(req, res) {
                 { email }
             ]
         });
-        
+
 
         if (!user) {
             return res.status(401).json({
@@ -118,7 +118,36 @@ async function userLoginController(req, res) {
     }
 }
 
+/**
+ * -Get Current User Controller
+ * -/api/auth/me
+ */
+
+async function getCurrentUserController(req, res) {
+    try {
+        const user = await userModel.findById(req.user.userId).select("-password");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        return res.status(200).json({
+            user
+        });
+
+    } catch (e) {
+        console.log(e);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+}
+
 export {
     userRegisterController,
-    userLoginController
+    userLoginController,
+    getCurrentUserController
 };

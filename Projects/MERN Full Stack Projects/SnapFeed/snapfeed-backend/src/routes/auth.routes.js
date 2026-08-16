@@ -1,8 +1,11 @@
 import express from 'express';
 import {
     userRegisterController,
-    userLoginController
+    userLoginController,
+    getCurrentUserController
 } from '../controllers/auth.controller.js'
+
+import authUser from '../middleware/auth.middleware.js'
 const router = express.Router();
 
 // /api/auth
@@ -14,6 +17,6 @@ router.post("/register", userRegisterController);
 router.post("/login", userLoginController);
 
 // /api/auth/me Get user login in
-// router.get("/me",);
+router.get("/me", authUser, getCurrentUserController);
 
 export default router;
