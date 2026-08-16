@@ -1,6 +1,6 @@
 import "dotenv/config";
-import bcrypt from "bcryptjs";
-import userModel from "../models/user.model";
+import bcrypt from "bcrypt";
+import userModel from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
 /**
@@ -73,6 +73,7 @@ async function userLoginController(req, res) {
                 { email }
             ]
         });
+        
 
         if (!user) {
             return res.status(401).json({
