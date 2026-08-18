@@ -1,7 +1,7 @@
 import userModel from "../models/user.model.js";
 import {uploadProfileImage} from '../services/storage.services.js';
 import postModel from '../models/post.model.js';
-
+import mongoose from "mongoose";
 /**
  * -Get User Profile and Posts
  * -/api/user/:id
@@ -67,7 +67,7 @@ async function getUserProfileandPosts(req, res) {
 async function followUser(req, res) {
     try {
         const currentUserId = req.user.userId;
-        const targetUserId = req.body.id;
+        const targetUserId = req.params.id;
 
         if (!mongoose.Types.ObjectId.isValid(targetUserId)) {
             return res.status(400).json({
@@ -198,7 +198,7 @@ async function unfollowUser(req, res) {
  */
 async function followersList(req, res) {
     try {
-        const userId = req.params;
+        const userId = req.params.id;
 
         if (!mongoose.Types.ObjectId.isValid(userId)) {
             return res.status(400).json({
@@ -238,7 +238,7 @@ async function followersList(req, res) {
  */
 async function followingList(req, res) {
     try {
-        const userId = req.params;
+        const userId = req.params.id;
 
         if (!mongoose.Types.ObjectId.isValid(userId)) {
             return res.status(400).json({
@@ -259,7 +259,7 @@ async function followingList(req, res) {
 
         return res.status(200).json({
             message: "Following fetched successfully",
-            followers: user.followers,
+            following: user.following,
         });
 
 
@@ -286,7 +286,7 @@ async function userProfile(req, res) {
             });
         }
 
-        const { bio } = req.body;
+        const { bio } = req.body || {};
         const profileImage = req.file;
 
         const user = await userModel.findById(userId);
