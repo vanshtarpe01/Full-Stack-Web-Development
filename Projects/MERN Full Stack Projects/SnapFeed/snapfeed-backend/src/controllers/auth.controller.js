@@ -4,8 +4,8 @@ import userModel from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
 /**
- * User Register Controller
- * POST /api/auth/register
+ * -User Register Controller
+ * -POST /api/auth/register
  */
 async function userRegisterController(req, res) {
     try {
@@ -60,8 +60,8 @@ async function userRegisterController(req, res) {
 
 
 /**
- * User Login Controller
- * POST /api/auth/login
+ * -User Login Controller
+ * -POST /api/auth/login
  */
 async function userLoginController(req, res) {
     try {

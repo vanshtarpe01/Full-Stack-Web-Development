@@ -26,7 +26,31 @@ const uploadPostImage = (fileBuffer) => {
     });
 };
 
-export default uploadPostImage;
+const uploadProfileImage = (fileBuffer) => {
+    return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+            {
+                folder: "snapfeed/profile",
+                resource_type: "image",
+            },
+            (error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            }
+        );
+
+        stream.end(fileBuffer);
+    });
+};
+
+
+export {
+    uploadPostImage,
+    uploadProfileImage
+};
 
 // Using Funtion : const result = await uploadPostImage(req.file.buffer);
 // For express purpose: 

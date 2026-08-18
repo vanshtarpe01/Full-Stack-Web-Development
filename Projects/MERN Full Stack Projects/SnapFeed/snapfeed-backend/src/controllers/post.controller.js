@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import postModel from '../models/post.model.js';
 import userModel from '../models/user.model.js';
-import uploadPostImage from '../services/storage.services.js';
+import { uploadPostImage } from '../services/storage.services.js';
 /**
  * -Create a Post
  * -/api/post/
@@ -219,8 +219,8 @@ async function likePost(req, res) {
 }
 
 /**
- * Unlike a post
- * /api/post/:id/unlike
+ * -Unlike a post
+ * -/api/post/:id/unlike
  */
 
 async function unLikePost(req, res) {
