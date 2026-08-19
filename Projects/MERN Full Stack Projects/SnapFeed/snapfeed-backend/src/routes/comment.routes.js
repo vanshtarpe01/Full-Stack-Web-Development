@@ -17,7 +17,7 @@ router.post("/:postId",  authUser, commentOnPost);
 // /api/comment/:postId Get all comment of a post
 router.get("/:postId",  authUser, getAllPostComment);
 
-// /api/comment/:id  Delete a comment
-router.delete("/:id", authUser, deleteComment);
+// /api/comment/:commentId  Delete a comment
+router.delete("/:commentId", authUser, deleteComment);
 
 export default router;

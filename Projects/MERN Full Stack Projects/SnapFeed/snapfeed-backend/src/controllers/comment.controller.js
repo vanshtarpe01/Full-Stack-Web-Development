@@ -44,8 +44,8 @@ async function commentOnPost(req, res) {
 
         const comment = await commentModel.create(
             {
-                postId,
-                userId,
+                post: postId,
+                user: userId,
                 text: text.trim()
             }
         );
@@ -92,7 +92,7 @@ async function getAllPostComment(req, res) {
             .populate({
                 path: "comments",
                 populate: {
-                    path: "userId",
+                    path: "user",
                     select: "username profileImage"
                 }
             });
@@ -133,14 +133,24 @@ async function deleteComment(req, res) {
             });
         }
 
-        const comment = await commentModel.findOne({
-            _id: commentId,
-            userId: userId
-        });
+        const comment = await commentModel.findById(commentId);
 
         if (!comment) {
             return res.status(404).json({
-                message: "Comment not found or you are not the owner"
+                message: "Comment not found"
+            });
+        }
+
+        const post = comment.post
+            ? await postModel.findById(comment.post)
+            : await postModel.findOne({ comments: commentId });
+
+        const isCommentOwner = comment.user?.toString() === userId;
+        const isPostOwner = post?.user?.toString() === userId;
+
+        if (!isCommentOwner && !isPostOwner) {
+            return res.status(403).json({
+                message: "You are not allowed to delete this comment"
             });
         }
 
@@ -149,14 +159,13 @@ async function deleteComment(req, res) {
         });
 
         // Remove comment ID from the post
-        await postModel.findByIdAndUpdate(
-            comment.postId,
-            {
+        if (post) {
+            await postModel.findByIdAndUpdate(post._id, {
                 $pull: {
                     comments: comment._id
                 }
-            }
-        );
+            });
+        }
 
         return res.status(200).json({
             message: "Comment deleted successfully"
