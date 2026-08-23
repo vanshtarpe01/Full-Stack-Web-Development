@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import Register from "./Register";
 
-const Login = () => {
+
+const Login = () => {   
+  const navigate = useNavigate();
    const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
-    email: "",
+    identifier: "",
     password: "",
   });
 
@@ -28,27 +33,12 @@ const Login = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+    if (!formData.identifier.trim()) {
+      newErrors.identifier = "Email or username is required";
     }
-    // Password validation
+
     if (!formData.password) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters";
-    } else if (!/[A-Z]/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain at least one uppercase letter";
-    } else if (!/[a-z]/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain at least one lowercase letter";
-    } else if (!/[0-9]/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain at least one number";
-    } else if (!/[!@#$%^&*]/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain at least one special character";
     }
 
     setErrors(newErrors);
@@ -71,12 +61,17 @@ const Login = () => {
      try {
     const response = await axios.post(
       "http://localhost:3000/api/auth/login",
-      formData
+        formData,
+      { withCredentials: true }
     );
+
+    console.log("Sending:", formData);
 
     console.log(response.data);
 
     alert("Login successful!");
+
+    navigate("/me");
 
   } catch (error) {
     console.log(error);
@@ -119,14 +114,14 @@ const Login = () => {
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
 
-            {/* Email */}
+            {/* Email or Username */}
             <div className="space-y-2">
 
               <label
-                htmlFor="email"
+                htmlFor="identifier"
                 className="block text-sm font-semibold text-[#131b2e]"
               >
-                Email Address
+                Email or Username
               </label>
 
               <div className="relative">
@@ -157,11 +152,13 @@ const Login = () => {
                 </div>
 
                 <input
-                  id="email"
-                  name="email"
+                  id="identifier"
+                  name="identifier"
                   type="text"
+                  value={formData.identifier}
+                  onChange={handleChange}
                   required
-                  placeholder="you@example.com"
+                  placeholder="you@example.com or username"
                   className="
                     w-full
                     pl-12
@@ -224,10 +221,12 @@ const Login = () => {
                   </svg>
                 </div>
 
-                <input
+                <input                 
                   id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                   placeholder="••••••••"
                   className="
@@ -247,7 +246,7 @@ const Login = () => {
                     focus:border-[#0058be]
                     focus:ring-4
                     focus:ring-[#0058be]/20
-                  "
+                 "
                 />
 
                 {/* Show Password */}
@@ -354,6 +353,7 @@ const Login = () => {
               <button
                 type="button"
                 className="ml-1 text-sm font-semibold text-[#0058be] hover:text-[#004395] transition-colors"
+                 onClick={() => navigate("/register")}
               >
                 Register
               </button>
