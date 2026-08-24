@@ -75,6 +75,7 @@ async function getFeedPosts(req, res) {
                 }
             })
             .populate("user", "username profileImage")
+            .populate("likes", "username profileImage")
             .sort({ createdAt: -1 });
 
         return res.status(200).json({
@@ -108,7 +109,15 @@ async function getSinglePost(req, res) {
 
         const post = await postModel
             .findById(postId)
-            .populate("user", "username profileImage");
+            .populate("user", "username profileImage")
+            .populate("likes", "username profileImage")
+            .populate({
+                path: "comments",
+                populate: {
+                    path: "user",
+                    select: "username profileImage",
+                },
+            });
 
         if (!post) {
             return res.status(404).json({
@@ -137,8 +146,7 @@ async function getSinglePost(req, res) {
 
 async function deleteOwnPost(req, res) {
     try {
-        const { postId } = req.body;
-
+        const { postId } = req.params;
 
         if (!mongoose.Types.ObjectId.isValid(postId)) {
             return res.status(400).json({

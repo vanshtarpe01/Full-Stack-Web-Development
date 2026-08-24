@@ -83,7 +83,7 @@ const CreatePost = () => {
 
           <li>
             <a
-              href="#"
+              href="/me"
               className="flex items-center gap-4 text-slate-600 hover:bg-slate-100 rounded-xl p-4 transition"
             >
               <span>⌂</span>
@@ -93,7 +93,7 @@ const CreatePost = () => {
 
           <li>
             <a
-              href="#"
+              href="/create"
               className="flex items-center gap-4 bg-blue-600 text-white rounded-xl p-4 font-bold"
             >
               <span>＋</span>
@@ -113,7 +113,7 @@ const CreatePost = () => {
 
           <li>
             <a
-              href="#"
+              href="/profile"
               className="flex items-center gap-4 text-slate-600 hover:bg-slate-100 rounded-xl p-4 transition"
             >
               <span>👤</span>
@@ -256,7 +256,7 @@ const CreatePost = () => {
         </a>
 
         <a
-          href="/"
+          href="/create"
           className="flex flex-col items-center text-blue-700 font-semibold"
         >
           <span>＋</span>
