@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHire - Developer Recruitment Portal</title>
+
+</head>
+
+<body>
+    <main>
+        <section class="personal-info">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name : </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name ">
+
+                <label for="dob">Date of Birth : </label>
+                <input type="date" placeholder="Select Date">
+
+                <p>Gender</p>
+                <div>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+
+                <label for="email">Email : </label>
+                <input type="email" placeholder="Enter your email id">
+
+                <label for="phone">Contact Number : </label>
+                <input type="tel" placeholder="Enter your mobile number">
+
+                <label for="address">Address : </label>
+                <input type="text" placeholder="Enter your address ">
+            </fieldset>
+        </section>
+
+        <section class="educational-infor">
+            <fieldset>
+                <legend>Eduction Information</legend>
+                <div class="high-qulaification">
+                    <label for="highest-qualification">Highest Level of Education </label>
+                    <select name="highest-qualification" id="highest-qualification">
+                        <option value="">-- Please choose an option --</option>
+                        <option value="secondary">Secondary/High School</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="bachlors">Bachelor's</option>
+                        <option value="masters">Master's</option>
+                    </select>
+                </div>
+
+                <div class="degree">
+                    <label for="degree">Degree/Qualification Name </label>
+                    <select name="degree" id="degree">
+                        <option value="">-- Select your degree --</option>
+                        <option value="btech">B.Tech</option>
+                        <option value="bcom">B.Com</option>
+                        <option value="ba">BA</option>
+                        <option value="ma">MA</option>
+                        <option value="msc">M.Sc</option>
+                        <option value="bsc">B.Sc</option>
+                        <option value="M=mba">MBA</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="field">Field Of Study </label>
+                    <select name="field" id="field">
+                        <option value="">-- Select your field --</option>
+                        <option value="cse">Computer Science and Engineering</option>
+                        <option value="me">Mechnical Engineering</option>
+                        <option value="ee">ELectrical Engineering</option>
+                        <option value="extc">Electronics and Telecommunication</option>
+                        <option value="cse-aiml">Computer Science and Engineering-AIML</option>
+                        <option value="aids">Artificial Intelligence and Data Science</option>
+                    </select>
+                </div>
+
+                <div class="institution">
+                    <label for="institude">Institution </label>
+
+                    <select name="institude" id="institude">
+                        <option value="">-- Select Institude --</option>
+                        <option value="prpcem">P. R. Pote College of Engineering and Management, Amaravti</option>
+                        <option value="gcoa">Government College of Engineering, Amaravti</option>
+                        <option value="dypp">D. Y. Patil, Pune</option>
+                        <option value="yccoe">Yashwantrao Chavaun College of Engineering, Nagpure</option>
+                    </select>
+
+                </div>
+
+                <div class="university">
+                    <label for="university">University </label>
+                    <select name="university" id="university">
+                        <option value="">-- Select University ---</option>
+                        <option value="sgbua">Sant. Gdage Baba University, Amravati</option>
+                        <option value="sbfup">Savitri Bai Fhule University, Pune</option>
+                    </select>
+                </div>
+
+                <div class="other">
+                    <label for="start-date">Start Date </label>
+                    <input type="date" name="start-date" id="start-date">
+                    <label for="end-date">End Date </label>
+                    <input type="date" name="end-date" id="end-date">
+
+                    <label for="cgpa">CGPA </label>
+                    <input type="number" name="cgpa" id="cgpa">
+                </div>
+            </fieldset>
+        </section>
+
+        <section class="tech-skills">
+            <fieldset>
+                <legend>Technical Skills</legend>
+                <div>
+                    <input type="checkbox" name="skills" id="html" value="HTML">
+                    <label for="html">HTML</label>
+
+                    <input type="checkbox" name="skills" id="css" value="CSS">
+                    <label for="css">CSS</label>
+
+                    <input type="checkbox" name="skills" id="js" value="JavaScript">
+                    <label for="js">JavaScript</label>
+
+                    <input type="checkbox" name="skills" id="python" value="Python">
+                    <label for="python">Python</label>
+                </div>
+            </fieldset>
+        </section>
+
+        <section class="personal-exp">
+            <fieldset>
+                <legend>Professional Experience</legend>
+
+                <div>
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job_title" placeholder="e.g., Software Developer">
+                </div>
+
+                <div>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="e.g., Infosys">
+                </div>
+
+                <div>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" name="start_date">
+
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" name="end_date">
+
+                    <input type="checkbox" id="current-job" name="current_job">
+                    <label for="current-job">I currently work here</label>
+                </div>
+
+                <div>
+                    <label for="responsibilities">Key Responsibilities</label>
+                    <textarea id="responsibilities" name="responsibilities" rows="4" cols="40"
+                        placeholder="Describe your role and achievements..."></textarea>
+                </div>
+            </fieldset>
+
+        </section>
+
+        <section class="links">
+            <fieldset>
+                <legend>Documents and Portfolio</legend>
+
+                <div>
+                    <label for="resume">Upload Resume / CV (PDF or DOCX)</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <div>
+                    <label for="certificates">Additional Certificates (Optional)</label>
+                    <input type="file" id="certificates" name="certificates" accept=".pdf,.jpg,.png" multiple>
+                </div>
+
+                <div>
+                    <label for="portfolio-url">Portfolio Website</label>
+                    <input type="url" id="portfolio-url" name="portfolio_url" placeholder="https://yourportfolio.com">
+                </div>
+
+                <div>
+                    <label for="github-url">GitHub / LinkedIn Profile</label>
+                    <input type="url" id="github-url" name="github_url" placeholder="https://github.com">
+                </div>
+            </fieldset>
+
+        </section>
+
+        <section class="other-details">
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <div>
+                    <label for="notice-period">Notice Period / Availability</label>
+                    <select id="notice-period" name="notice_period">
+                        <option value="">-- Select Availability --</option>
+                        <option value="immediate">Immediate</option>
+                        <option value="15-days">15 Days</option>
+                        <option value="30-days">30 Days</option>
+                        <option value="60-days">60 Days</option>
+                        <option value="90-days">90 Days</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="expected-ctc">Expected Salary (Annual)</label>
+                    <input type="number" id="expected-ctc" name="expected_ctc" placeholder="e.g., 600000" min="0"
+                        step="10000">
+                </div>
+
+                <div>
+                    <p>Willing to Relocate?</p>
+                    <input type="radio" id="relocate-yes" name="relocate" value="yes">
+                    <label for="relocate-yes">Yes</label>
+
+                    <input type="radio" id="relocate-no" name="relocate" value="no">
+                    <label for="relocate-no">No</label>
+                </div>
+
+                <div>
+                    <label for="additional-notes">Anything else you'd like us to know?</label>
+                    <textarea id="additional-notes" name="additional_notes" rows="4" cols="40"
+                        placeholder="Cover note, achievements, or special requests..."></textarea>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="declaration" name="declaration" required>
+                    <label for="declaration">I confirm that all the information provided above is true and
+                        accurate.</label>
+                </div>
+            </fieldset>
+
+        </section>
+
+        <button>Apply</button>
+
+    </main>
+</body>
+
+</html>
